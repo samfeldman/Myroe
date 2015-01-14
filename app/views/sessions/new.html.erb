@@ -1,0 +1,18 @@
+<section class="sessions_new">
+	<div class="login">
+		<h1>Login</h1>
+		<%= form_tag('/sessions', method: "POST") do %>
+		<%= fields_for :user do |ff| %>
+			<%= ff.email_field(:email, :placeholder => "email") %>
+			<%= ff.password_field(:password, :placeholder => "password") %>
+			<%= ff.password_field(:password_confirmation, :placeholder => "confirm password") %>
+			<%= ff.submit("log in!") %>
+		<% end %>
+	<% end %>
+
+	<h2>not signed up yet?</h2>
+
+	<%= link_to(("sign up!"), "/users/new")%>
+
+	</div>
+</section>

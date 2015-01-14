@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  lat: MyString
+  long: MyString
+  time_caught: 2015-01-10 17:00:51
+  weather: MyString
+  comments: MyString
+
+two:
+  user_id: 1
+  lat: MyString
+  long: MyString
+  time_caught: 2015-01-10 17:00:51
+  weather: MyString
+  comments: MyString

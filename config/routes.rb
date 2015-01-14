@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :users
-  resources :sessions, except: [:new, :edit, :update]
+  root "sessions#index"
+  get "sessions/destroy"
+  resources :users, except: [:index, :edit]
+  resources :sessions, except: [:edit, :update, :show]
   resources :fishes, except: [:index, :create]
 
 
