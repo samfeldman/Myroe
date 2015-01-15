@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110220051) do
+ActiveRecord::Schema.define(version: 20150115185728) do
 
   create_table "fish", force: true do |t|
     t.integer  "user_id"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20150110220051) do
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "fish_type"
+    t.integer  "number"
   end
 
   create_table "users", force: true do |t|

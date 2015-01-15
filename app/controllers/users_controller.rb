@@ -3,11 +3,11 @@ class UsersController < ApplicationController
   def show
     current_user
     @user = User.find(params[:id])
-    @fish = Fish.new
-    @fishes = Fish.where(user_id: params[:id])
+    @fishes = @user.fish
   end
 
   def create
+    current_user
     @user = User.new(user_params)
     if @user.save!
       session[:user_id] = @user.id
@@ -43,6 +43,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    current_user
     @user = User.new
   end
 

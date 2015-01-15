@@ -1,36 +1,6 @@
 <section class="users_show">
-	<nav class="top_nav">
-		<ul>
-			<li class="bucket_nav">Bucket</li>
-			<div class="bucket">
-				<h1><%= "#{@user.username}" %></h1>
-				<h2><%= "#{@user.zipcode}" %></h2>
-				<h1>Catches</h1>
-					<div class="fish">
-					</div>
-			</div>
-			<li class="settings_nav">Settings</li>
-				<div class="settings">
-					<% if @current_user.id == @user.id %>
-						<%= form_for @user do |f| %>
-							<%= f.text_field :username %>
-							<%= f.text_field :zipcode, :placeholder => "zipcode" %>
-							<%= f.email_field :email %>
-							<%= f.password_field :password, :placeholder => "type password here" %>
-							<%= f.password_field :password_confirmation, :placeholder => "confirm password" %>
-							<%= f.submit "update" %>
-							<button>
-								<%= link_to ("delete user"), "/users/#{ @user.id }", method: :delete %>
-							</button>
-						<% end %>
-					<% else %>
-						<h2>you do not have access!</h2>
-					<% end %>
-				</div>
-			<li><a href="/sessions/destroy">logout</a>
-					</li>
-		</ul>
-	</nav>
-	<div class="map">
+	<div>
+		<%= render partial: "./users/show",
+		locals: { user: @user } %>
 	</div>
 </section>

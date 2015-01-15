@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "sessions/destroy"
   resources :users, except: [:index, :edit]
   resources :sessions, except: [:edit, :update, :show]
-  resources :fishes, except: [:index, :create]
+  resources :fishes
 
 
   # The priority is based upon order of creation: first created -> highest priority.

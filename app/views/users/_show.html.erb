@@ -1,0 +1,10 @@
+<h1>Bucket</h1>
+<h1><%= "#{user.username}" %></h1>
+<h2><%= "#{user.zipcode}" %></h2>
+<h1>Catches</h1>
+<% @fishes.each do |fish| %>
+	<div>
+		<%= render partial: "./fishes/show",
+		locals: { fish: fish } %>
+	</div>
+<% end %>

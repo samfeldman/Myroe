@@ -2,13 +2,48 @@
 <html>
 <head>
   <title>Myroe</title>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<main class="clearfix">
+		<div id="mapdiv">
+		</div>
+		<section class="over_map">
+			<% if @current_user %>
+				<nav class="top_nav">
+					<ul>
+						<li class="bucket_nav">Bucket</li>
+						<li class="settings_nav">Settings</li>
+						<li><a href="/sessions/destroy">logout</a></li>
+					</ul>
+					<div class="bucket_drop content">
+						<div class="close">CLOSE</div>
+						<%= render partial: "./users/show",
+						locals: { user: @current_user } %>
+					</div>
+					<div class="settings_drop content">
+						<div class="close">CLOSE</div>
+						<h1>Settings</h1>
+						<%= form_for @current_user do |f| %>
+							<%= f.text_field :username %>
+							<%= f.text_field :zipcode, :placeholder => "zipcode" %>
+							<%= f.email_field :email %>
+							<%= f.password_field :password, :placeholder => "type password here" %>
+							<%= f.password_field :password_confirmation, :placeholder => "confirm password" %>
+							<%= f.submit "update" %>
+							<button>
+								<%= link_to ("delete user"), "/users/#{ @current_user.id }", method: :delete %>
+							</button>
+						<% end %>
+					</div>
+				</nav>
+			<% end %>
+			<%= yield %>
+			<li><a href="/fishes/new">new fish</a></li>
+		</section>
+	</main>
 </body>
 </html>
