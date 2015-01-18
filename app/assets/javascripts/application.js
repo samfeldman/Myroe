@@ -25,14 +25,17 @@ $(function() {
 		$( ".settings_drop" ).show();
 	});
 
-	$( ".close" ).on( "click", function(){
+	$( ".bucket_close" ).on( "click", function(){
 		$( ".bucket_drop" ).hide();
 	});
 
-	$( ".close" ).on( "click", function(){
+	$( ".settings_close" ).on( "click", function(){
 		$( ".settings_drop" ).hide();
 	});
 
+	$( ".other_bucket_close" ).on( "click", function(){
+		$( ".other_bucket" ).hide();
+	});
 
 	var latitude = 0;
 	var longitude = 0;
@@ -50,25 +53,23 @@ $(function() {
 		map = new google.maps.Map(document.getElementById('mapdiv'),
 	                          	  mapOptions);
 
-		var marker;
+		var newfishmarker;
 
 		function placeMarker(location) {
-		console.log("function in place marker")
-		  if ( marker ) {
-		    marker.setPosition(location);
-		  } else {
-		    marker = new google.maps.Marker({
-		      position: location,
-		      map: map
-		    });
-		  }
-		}
+			if ( newfishmarker ) {
+				newfishmarker.setPosition(location);
+			} else {
+				newfishmarker = new google.maps.Marker({
+			  		position: location,
+			  		map: map
+				});
+			};
+		};
 
 		google.maps.event.addListener(map, 'click', function(event) {
-		  placeMarker(event.latLng);
-		  window.location.href = "http://localhost:3000/fishes/new";
+			newfishMarker(event.latLng);
+			window.location.href = "http://localhost:3000/fishes/new?lat="+ event.latLng.k+"&lng="+ event.latLng.D;
 		});
-
 	};
 
 	if ("geolocation" in navigator){
@@ -77,32 +78,45 @@ $(function() {
 			longitude = position.coords.longitude;
 			map.setCenter(new google.maps.LatLng( latitude, longitude ) );
 
-			var geocoder = new google.maps.Geocoder();
-			var address = "new york";
-			var lat1 = undefined;
-			var lon1 = undefined;
+			$.ajax({
+				type: "GET",
+				url: "/fishes",
+			})
+			.done(function( fishes ) {
+				for(var i = 0; i < fishes.length; i++){
+					console.log(fishes);
+					var image = '/fishicon.png'
+					var fish_type = fishes[i].fish_type;
+					var number = fishes[i].number;
+					var user_id = fishes[i].user_id;
+					var weather = fishes[i].weather;
+					var comments = fishes[i].comments;
+					var time_caught = fishes[i].time_caught;
+					var fishLat = fishes[i].lat;
+					var fishLong = fishes[i].long;
+					var fishLatlng = new google.maps.LatLng(fishLat,fishLong);
+					var fishMarker = new google.maps.Marker({
+						position: fishLatlng,
+						map: map,
+						animation: google.maps.Animation.DROP,
+						fish_type: fish_type,
+						number: number,
+						user_id: user_id,
+						weather: weather,
+						comments: comments,
+						time_caught: time_caught,
+						icon: image
+					});
+					
+					google.maps.event.addListener(fishMarker, 'click', function() {
+						window.location.href = "http://localhost:3000/users/" + user_id
+					});
 
-			geocoder.geocode( { 'address': address}, function(results, status) {
-
-				if (status == google.maps.GeocoderStatus.OK) {
-				    lat1 = results[0].geometry.location.latitude;
-				    lon1 = results[0].geometry.location.longitude;
-				} 
-			}); 
+		        }
+			});
 		})
 	}
 
-
-
-
-	// $.ajax({
-	// 	type: "GET",
-	// 	url: "/show",
-	// })
-	// .done(function( object ) {
-	// 	console.log(object)
-	// 	alert( object.latitude );
-	// });
 
 
 });

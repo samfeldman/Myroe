@@ -2,8 +2,8 @@ class FishesController < ApplicationController
   
   def index
     current_user
-    @fish = Fish.find(params[:id])
-    @fishes = Fish.where(user_id: params[:id])
+    @fishes = Fish.all
+    render json: @fishes
   end
 
   def show
@@ -29,7 +29,7 @@ class FishesController < ApplicationController
     else
       flash[:alert] = "Updates not saved; please try again."
     end
-    redirect_to :back
+    redirect_to "/users/#{@current_user.id}"
   end
 
   def edit
@@ -42,7 +42,7 @@ class FishesController < ApplicationController
     current_user
     @fish = Fish.new(fish_params)
     if @fish.save!
-      redirect_to :back    
+      redirect_to "/users/#{@current_user.id}"   
     else 
       flash[:alert] = @fish.errors.full_messages
       redirect_to :back
@@ -63,7 +63,7 @@ class FishesController < ApplicationController
   private
         
     def fish_params
-      params.require(:fish).permit(:user_id, :lat, :long, :type, :time_caught, :weather, :comments)
+      params.require(:fish).permit(:user_id, :lat, :long, :fish_type, :number, :time_caught, :weather, :comments)
     end
 
 

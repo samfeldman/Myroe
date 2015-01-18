@@ -20,12 +20,12 @@
 						<li><a href="/sessions/destroy">logout</a></li>
 					</ul>
 					<div class="bucket_drop content">
-						<div class="close">CLOSE</div>
+						<div class="bucket_close">CLOSE</div>
 						<%= render partial: "./users/show",
 						locals: { user: @current_user } %>
 					</div>
 					<div class="settings_drop content">
-						<div class="close">CLOSE</div>
+						<div class="settings_close">CLOSE</div>
 						<h1>Settings</h1>
 						<%= form_for @current_user do |f| %>
 							<%= f.text_field :username %>
@@ -41,6 +41,8 @@
 					</div>
 				</nav>
 			<% end %>
+			<%= flash[:alert] if flash[:alert] %>
+			<%= flash[:notice] if flash[:notice] %>
 			<%= yield %>
 			<li><a href="/fishes/new">new fish</a></li>
 		</section>

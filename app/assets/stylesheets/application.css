@@ -47,7 +47,7 @@ main {
 }
 
 .bucket_drop, .settings_drop {
-	display: hidden;
+	display: none;
 }
 
 ul {
