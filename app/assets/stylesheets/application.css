@@ -50,6 +50,11 @@ main {
 	display: none;
 }
 
+.catches {
+	height: 100px;
+	overflow-y: auto;
+}
+
 ul {
 	list-style: none;
 	padding: none;

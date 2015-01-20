@@ -1,13 +1,11 @@
-<div class="fish">
-	<ul>
-		<li><h1><%="#{ fish.fish_type }"%> (<%="#{ fish.number }"%>)<h1></li>
-		<li><h2>caught by <a href="/users/<%="#{fish.user_id}"%>"><%="#{ fish.user.username }"%></a><h2></li>
-		<li>location: <%="#{ fish.lat }"%>, <%="#{ fish.long }"%></li>
-		<li>time: <%="#{ fish.time_caught }"%></li>
-		<li>weather: <%="#{ fish.weather }"%></li>
-		<li>comments: <%="#{ fish.comments }"%></li>
-		<% if @current_user == fish.user %>
-			<li><a href="/fishes/<%="#{ fish.id }"%>/edit">Edit Fish</a></li>
-		<% end %>
-	</ul>
-</div>
+<ul class="fish clearfix">
+	<li><h1><%="#{ fish.fish_type }"%> (<%="#{ fish.number }"%>)<h1></li>
+	<li><h2>caught by <a href="/users/<%="#{fish.user_id}"%>"><%="#{ fish.user.username }"%></a><h2></li>
+	<li><a class="java_fish" href="#" data-lat="<%=fish.lat%>" data-lng="<%=fish.long%>">show location in map</a></li>
+	<li>time: <%="#{ fish.time_caught }"%></li>
+	<li>weather: <%="#{ fish.weather }"%></li>
+	<li>comments: <%="#{ fish.comments }"%></li>
+	<% if @current_user == fish.user %>
+		<li><a href="/fishes/<%="#{ fish.id }"%>/edit">Edit Fish</a></li>
+	<% end %>
+</ul>

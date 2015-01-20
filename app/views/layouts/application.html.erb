@@ -3,8 +3,8 @@
 <head>
   <title>Myroe</title>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,15 +15,10 @@
 			<% if @current_user %>
 				<nav class="top_nav">
 					<ul>
-						<li class="bucket_nav">Bucket</li>
+						<li class="bucket_nav"><a href="/users/<%= @current_user.id %>">Bucket</a></li>
 						<li class="settings_nav">Settings</li>
 						<li><a href="/sessions/destroy">logout</a></li>
 					</ul>
-					<div class="bucket_drop content">
-						<div class="bucket_close">CLOSE</div>
-						<%= render partial: "./users/show",
-						locals: { user: @current_user } %>
-					</div>
 					<div class="settings_drop content">
 						<div class="settings_close">CLOSE</div>
 						<h1>Settings</h1>

@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 $(function() {
@@ -33,10 +32,6 @@ $(function() {
 		$( ".settings_drop" ).hide();
 	});
 
-	$( ".other_bucket_close" ).on( "click", function(){
-		$( ".other_bucket" ).hide();
-	});
-
 	var latitude = 0;
 	var longitude = 0;
 	var map;
@@ -53,13 +48,13 @@ $(function() {
 		map = new google.maps.Map(document.getElementById('mapdiv'),
 	                          	  mapOptions);
 
-		var newfishmarker;
+		var newfishMarker;
 
 		function placeMarker(location) {
-			if ( newfishmarker ) {
-				newfishmarker.setPosition(location);
+			if ( newfishMarker ) {
+				newfishMarker.setPosition(location);
 			} else {
-				newfishmarker = new google.maps.Marker({
+				newfishMarker = new google.maps.Marker({
 			  		position: location,
 			  		map: map
 				});
@@ -67,9 +62,23 @@ $(function() {
 		};
 
 		google.maps.event.addListener(map, 'click', function(event) {
-			newfishMarker(event.latLng);
+			placeMarker(event.latLng);
 			window.location.href = "http://localhost:3000/fishes/new?lat="+ event.latLng.k+"&lng="+ event.latLng.D;
 		});
+
+
+		$( ".java_fish" ).on( "click", function(event){
+			event.preventDefault();
+			map.setCenter({lat: parseFloat(this.dataset.lat), lng: parseFloat(this.dataset.lng)});
+		});
+
+		var fishscrollid = window.location.search.split("?fish_id=")[1];
+		console.log(fishscrollid);
+		if (fishscrollid) {
+			console.log($('.fish-'+fishscrollid).position().top);
+			$('.catches').scrollTop($('.fish-'+fishscrollid).position().top);
+		};
+
 	};
 
 	if ("geolocation" in navigator){
@@ -84,7 +93,6 @@ $(function() {
 			})
 			.done(function( fishes ) {
 				for(var i = 0; i < fishes.length; i++){
-					console.log(fishes);
 					var image = '/fishicon.png'
 					var fish_type = fishes[i].fish_type;
 					var number = fishes[i].number;
@@ -92,6 +100,7 @@ $(function() {
 					var weather = fishes[i].weather;
 					var comments = fishes[i].comments;
 					var time_caught = fishes[i].time_caught;
+					var fish_id = fishes[i].id;
 					var fishLat = fishes[i].lat;
 					var fishLong = fishes[i].long;
 					var fishLatlng = new google.maps.LatLng(fishLat,fishLong);
@@ -100,6 +109,7 @@ $(function() {
 						map: map,
 						animation: google.maps.Animation.DROP,
 						fish_type: fish_type,
+						fish_id: fish_id,
 						number: number,
 						user_id: user_id,
 						weather: weather,
@@ -109,7 +119,7 @@ $(function() {
 					});
 					
 					google.maps.event.addListener(fishMarker, 'click', function() {
-						window.location.href = "http://localhost:3000/users/" + user_id
+						window.location.href = "http://localhost:3000/users/" + this.user_id + "?fish_id=" + this.fish_id
 					});
 
 		        }

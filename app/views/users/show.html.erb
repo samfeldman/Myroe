@@ -1,6 +1,15 @@
-<div class="other_bucket">
-	<div class="other_bucket_close">CLOSE</div>
-	<%= render partial: "./users/show",
-	locals: { user: @user } %>
+<div class="bucket_close">CLOSE</div>
+<div class="bucket">
+	<h1>My Bucket</h1>
+	<h1><%= "#{@user.username}" %></h1>
+	<h2><%= "#{@user.zipcode}" %></h2>
+	<h1>Catches</h1>
+	<ul class="catches">
+		<% @fishes.each do |fish| %>
+				<li class="fish-<%=fish.id%>">
+				<%= render partial: "./fishes/show",
+				locals: { fish: fish } %>
+				</li>
+		<% end %>
+	</ul>
 </div>
-
