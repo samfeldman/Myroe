@@ -10,9 +10,13 @@
 </head>
 <body>
 	<main class="clearfix">
+		<% if @current_user == nil %>
+			<div class="map_cover">
+			</div>
+		<% end %>
 		<div id="mapdiv">
 		</div>
-		<section class="over_map">
+		<section class="over_map clearfix">
 			<% if @current_user %>
 				<nav class="top_nav clearfix">
 					<ul class="clearfix">
@@ -21,18 +25,21 @@
 						<li><a href="/sessions/destroy">Logout</a></li>
 					</ul>
 					<div class="settings_drop content">
-						<div class="settings_close">CLOSE</div>
-						<h1>Settings</h1>
+						<h2 class="settings_title">Settings</h2>
 						<%= form_for @current_user do |f| %>
 							<%= f.text_field :username %>
 							<%= f.text_field :zipcode, :placeholder => "zipcode" %>
 							<%= f.email_field :email %>
 							<%= f.password_field :password, :placeholder => "type password here" %>
 							<%= f.password_field :password_confirmation, :placeholder => "confirm password" %>
+							<br>
 							<%= f.submit "update" %>
+							<br>
 							<button>
 								<%= link_to ("delete user"), "/users/#{ @current_user.id }", method: :delete %>
 							</button>
+							<br>
+							<div class="settings_close">CLOSE</div>
 						<% end %>
 					</div>
 				</nav>

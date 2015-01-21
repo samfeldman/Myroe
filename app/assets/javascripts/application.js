@@ -123,6 +123,49 @@ $(function() {
 
 		        }
 			});
+
+
+			$.ajax({
+				type: "GET",
+				url: "/outfalls",
+			})
+			.done(function( outfalls ) {
+				for(var i = 0; i < outfalls.length; i++){
+					var image = '/outfall.png'
+					var fish_type = fishes[i].fish_type;
+					var number = fishes[i].number;
+					var user_id = fishes[i].user_id;
+					var weather = fishes[i].weather;
+					var comments = fishes[i].comments;
+					var time_caught = fishes[i].time_caught;
+					var fish_id = fishes[i].id;
+					var fishLat = fishes[i].lat;
+					var fishLong = fishes[i].long;
+					var fishLatlng = new google.maps.LatLng(fishLat,fishLong);
+					var fishMarker = new google.maps.Marker({
+						position: fishLatlng,
+						map: map,
+						animation: google.maps.Animation.DROP,
+						fish_type: fish_type,
+						fish_id: fish_id,
+						number: number,
+						user_id: user_id,
+						weather: weather,
+						comments: comments,
+						time_caught: time_caught,
+						icon: image
+					});
+					
+					google.maps.event.addListener(fishMarker, 'click', function() {
+						window.location.href = "http://localhost:3000/users/" + this.user_id + "?fish_id=" + this.fish_id
+					});
+
+		        }
+			});
+
+
+
+
 		})
 	}
 

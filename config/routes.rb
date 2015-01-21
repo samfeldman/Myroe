@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index, :edit]
   resources :sessions, except: [:edit, :update, :show]
   resources :fishes
+  resources :outfalls, only: [:index]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

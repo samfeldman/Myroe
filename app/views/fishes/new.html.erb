@@ -1,7 +1,8 @@
-<div class="fish">
+<div class="content">
 	<%= form_for @fish, url: fishes_path, method: :post do |f| %>
-		<li>fish type <%= f.select :fish_type, [['fish1','fish1'],['fish2','fish2'],['fish3','fish3']]%></li>
-		<li>number caught <%= f.select :number, [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9],[10,10],[11,11],[12,12],[13,13]]%></li>
+		<h2>New Fish</h2>
+		<li class="fish_attr">fish type <%= f.select :fish_type, [['fish1','fish1'],['fish2','fish2'],['fish3','fish3']]%></li>
+		<li class="fish_attr">number caught <%= f.select :number, [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9],[10,10],[11,11],[12,12],[13,13]]%></li>
 		<li><%= f.hidden_field :user_id, :value => "#{@current_user.id}" %></li>
 		<li><%= f.hidden_field :lat, :value => params[:lat] %></li>
 		<li><%= f.hidden_field :long, :value => params[:lng] %></li>

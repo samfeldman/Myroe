@@ -14,6 +14,9 @@
 					locals: { fish: fish } %>
 					</li>
 			<% end %>
+		<% if @fishes.count == 0 %>
+		<li class="fish_li catch_some">Catch some fish!</li>
+		<% end %>
 		</ul>
 	</div>
 </div>

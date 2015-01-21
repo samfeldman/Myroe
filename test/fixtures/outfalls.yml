@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  site: MyString
+  description: MyString
+  lat: MyString
+  lng: MyString
+  percent_unsafe: MyString
+
+two:
+  site: MyString
+  description: MyString
+  lat: MyString
+  lng: MyString
+  percent_unsafe: MyString

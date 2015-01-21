@@ -1,6 +1,6 @@
 <section class="sessions_new">
-	<div class="content">
-		<h1>Login</h1>
+	<div class="login">
+		<h2>Login</h2>
 		<%= form_tag('/sessions', method: "POST") do %>
 		<%= fields_for :user do |ff| %>
 			<%= ff.email_field(:email, :placeholder => "email") %>
@@ -10,7 +10,7 @@
 		<% end %>
 	<% end %>
 
-	<h2>not signed up yet?</h2>
+	<h1>not signed up yet?</h1>
 
 	<%= link_to(("sign up!"), "/users/new")%>
 
