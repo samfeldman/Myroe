@@ -75,8 +75,7 @@ $(function() {
 		var fishscrollid = window.location.search.split("?fish_id=")[1];
 		console.log(fishscrollid);
 		if (fishscrollid) {
-			console.log($('.fish-'+fishscrollid).position().top);
-			$('.catches').scrollTop($('.fish-'+fishscrollid).position().top);
+			$('.catches').scrollTop($('.fish-'+fishscrollid).offset().top);
 		};
 
 	};

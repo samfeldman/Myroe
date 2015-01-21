@@ -18,6 +18,7 @@ body, html {
 	height: 100%;
 	width: 100%;
 	margin: 0;
+	font-family: 'Muli', sans-serif;
 }
 
 #mapdiv {
@@ -35,9 +36,11 @@ main {
 }
 
 .over_map {
+	background-color: #CADFAA;
 	position: absolute;
 	z-index: 99;
-	background-color: white;
+	max-height: 100%;
+	margin: 0;
 }
 
 .clearfix:after {
@@ -50,16 +53,11 @@ main {
 	display: none;
 }
 
-.catches {
-	height: 100px;
-	overflow-y: auto;
-}
-
 ul {
 	list-style: none;
-	padding: none;
+	padding: 0;
 	display: block;
-	width: 100%;
+	max-width: 100%;
 }
 
 li {
@@ -68,6 +66,88 @@ li {
 
 a {
 	text-decoration: none;
+	color: #E49307;
+}
+
+a:hover {
+	color: #FFE168;
+}
+
+nav {
+	margin: 30px;
+	color: #E49307;
+	text-decoration: none;
+}
+
+nav ul {
+	display: block;
+	margin: 0;
+	max-width: 100%;
+	border-bottom: 2px;
+	border-bottom-color: #FA8A25;
+	border-bottom-style: solid;
+}
+
+nav li {
+	display: inline-block;
+	float: center;
+	margin: 0 auto;
+	padding: 10px 10px;
+} 
+
+.top_nav li:hover {
+	color: #FFE168;
+	cursor: pointer;
+}
+
+.bucket {
+	display: inline-block;
+	float: left;
+	max-height: 100%;
+	margin: 0 30px;
+}
+
+.bucket .bucket_title {
+	margin-bottom: 10px;
+}
+
+.bucket h2 {
+	margin-top: 0;
+	font-size: 20px;
+	font-style: italic;
+}
+
+.bucket .catches_title {
+	margin-bottom: 20px;
+}
+
+.catches {
+	overflow-y: scroll;
+	margin-top: 10px;
+	border-top: 2px;
+	border-top-style: solid;
+	border-top-color: #FA8A25;
+	display: inline-block;
+	float: left;
+}
+
+.catches_ul {
+	margin: 0;
+	display: block;
+	float: left;
+}
+
+.fish_li {
+	margin: 0;
+	display: inline-block;
+	float: left;
+}
+.fish {
+	border: 2px;
+	border-style: solid;
+	border-color: #FA8A25;
+	display: inline-block;
+	float: left;
 }
 
 @media only screen and (min-width: 420px) {
@@ -85,7 +165,6 @@ a {
 		width: 34%;
 		float: left;
 		text-align: center;
-		margin-top: 40px; 
 	}
 
 }

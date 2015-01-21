@@ -1,15 +1,19 @@
-<div class="bucket_close">CLOSE</div>
 <div class="bucket">
-	<h1>My Bucket</h1>
-	<h1><%= "#{@user.username}" %></h1>
-	<h2><%= "#{@user.zipcode}" %></h2>
-	<h1>Catches</h1>
-	<ul class="catches">
-		<% @fishes.each do |fish| %>
-				<li class="fish-<%=fish.id%>">
-				<%= render partial: "./fishes/show",
-				locals: { fish: fish } %>
-				</li>
-		<% end %>
-	</ul>
+	<% if @current_user.id == @user.id %>
+		<h1 class="bucket_title">My Bucket</h1>
+	<% else %>
+		<h1 class="bucket_title"><%= @user.username %>'s Bucket</h1>
+	<% end %>
+	<h2>Location: <%= "#{@user.zipcode}" %></h2>
+	<h1 class="catches_title">Catches</h1>
+	<div class="catches">
+		<ul class="catches_ul clearfix">
+			<% @fishes.each do |fish| %>
+					<li class="fish_li fish-<%=fish.id%>">
+					<%= render partial: "./fishes/show",
+					locals: { fish: fish } %>
+					</li>
+			<% end %>
+		</ul>
+	</div>
 </div>

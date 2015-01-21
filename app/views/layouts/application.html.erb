@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Myroe</title>
+  <link href='http://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application' %>
@@ -13,11 +14,11 @@
 		</div>
 		<section class="over_map">
 			<% if @current_user %>
-				<nav class="top_nav">
-					<ul>
-						<li class="bucket_nav"><a href="/users/<%= @current_user.id %>">Bucket</a></li>
+				<nav class="top_nav clearfix">
+					<ul class="clearfix">
+						<li class="bucket_nav"><a href="/users/<%= @current_user.id %>">My Bucket</a></li>
 						<li class="settings_nav">Settings</li>
-						<li><a href="/sessions/destroy">logout</a></li>
+						<li><a href="/sessions/destroy">Logout</a></li>
 					</ul>
 					<div class="settings_drop content">
 						<div class="settings_close">CLOSE</div>
@@ -39,7 +40,6 @@
 			<%= flash[:alert] if flash[:alert] %>
 			<%= flash[:notice] if flash[:notice] %>
 			<%= yield %>
-			<li><a href="/fishes/new">new fish</a></li>
 		</section>
 	</main>
 </body>
