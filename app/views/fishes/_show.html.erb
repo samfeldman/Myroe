@@ -1,11 +1,11 @@
 <ul class="clearfix fish">
-	<li><h1><%="#{ fish.fish_type }"%> (<%="#{ fish.number }"%>)<h1></li>
-	<li><h2>caught by <a href="/users/<%="#{fish.user_id}"%>"><%="#{ fish.user.username }"%></a><h2></li>
-	<li class="fish_info"><a class="java_fish" href="#" data-lat="<%=fish.lat%>" data-lng="<%=fish.long%>" data-fish_id="<%=fish.id%>">show location in map</a></li>
-	<li class="fish_info">caught on: <%="#{ fish.time_caught }"%></li>
+	<li><h2><%="#{ fish.fish_type }"%> (<%="#{ fish.number }"%>)</h2></li>
+	<li><h3>caught by: <a href="/users/<%="#{fish.user_id}"%>"><%="#{ fish.user.username }"%></a></h3></li>
+	<li class="fish_info"><a class="java_fish" href="#" data-lat="<%=fish.lat%>" data-lng="<%=fish.long%>" data-fish_id="<%=fish.id%>">map location</a></li>
+	<li class="fish_info">caught: <%="#{ fish.time_caught }"%></li>
 	<li class="fish_info">weather: <%="#{ fish.weather }"%></li>
-	<li class="fish_info">comments: <%="#{ fish.comments }"%></li>
+	<li class="fish_info">notes: <%="#{ fish.comments }"%></li>
 	<% if @current_user == fish.user %>
-		<li class="fish_info"><a href="/fishes/<%="#{ fish.id }"%>/edit">Edit Fish</a></li>
+		<li class="fish_info"><a href="/fishes/<%="#{ fish.id }"%>/edit">edit fish</a></li>
 	<% end %>
 </ul>

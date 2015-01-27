@@ -1,18 +1,15 @@
-<section class="sessions_new">
-	<div class="login">
-		<h2>Login</h2>
+<div class="no_session">
+	<h2>Login</h2>
+	<ul>
 		<%= form_tag('/sessions', method: "POST") do %>
-		<%= fields_for :user do |ff| %>
-			<%= ff.email_field(:email, :placeholder => "email") %>
-			<%= ff.password_field(:password, :placeholder => "password") %>
-			<%= ff.password_field(:password_confirmation, :placeholder => "confirm password") %>
-			<%= ff.submit("log in!") %>
+			<%= fields_for :user do |ff| %>
+				<li>email: <%= ff.email_field(:email) %></li>
+				<li>password: <%= ff.password_field(:password) %></li>
+				<li>confirm: <%= ff.password_field(:password_confirmation) %></li>
+				<li><%= ff.submit("log in!") %></li>
+			<% end %>
 		<% end %>
-	<% end %>
-
-	<h1>not signed up yet?</h1>
-
+	</ul>
+	<h2>not signed up yet?</h2>
 	<%= link_to(("sign up!"), "/users/new")%>
-
-	</div>
-</section>
+</div>

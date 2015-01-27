@@ -14,6 +14,10 @@
  *= require_self
  */
 
+
+
+/*GENERAL*/
+
 body, html {
 	height: 100%;
 	width: 100%;
@@ -21,12 +25,18 @@ body, html {
 	font-family: 'Muli', sans-serif;
 }
 
+main {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
 input {
-	margin: 10px;
+	margin: 0 auto;
 }
 
 input[type='submit'] {
-	margin: auto 50px;
+	margin: 10px auto;
 }
 
 input:hover {
@@ -38,16 +48,17 @@ button {
 	float: center;
 }
 
-
 ul {
-	list-style: none;
+	margin: 0 auto;
 	padding: 0;
 	display: block;
 	max-width: 100%;
 }
 
 li {
-	float: left;
+	text-align: center;
+	margin: 5px auto;
+	list-style: none;
 }
 
 a {
@@ -60,8 +71,18 @@ a:hover {
 	cursor: pointer;
 }
 
+h3 {
+	margin: 5px 0;
+}
+
+.tab_up {
+		display: none;
+	}
+
+/*NAV*/
+
 nav {
-	margin: 30px;
+	margin: 20px 30px 30px 30px;
 	color: #E49307;
 	text-decoration: none;
 }
@@ -69,10 +90,15 @@ nav {
 nav ul {
 	display: block;
 	margin: 0;
+	padding-bottom: 10px;
 	max-width: 100%;
 	border-bottom: 2px;
 	border-bottom-color: #FA8A25;
 	border-bottom-style: solid;
+}
+
+nav li {
+	float: left;
 }
 
 .icon {
@@ -86,6 +112,16 @@ nav ul {
 .icon:hover {
 	cursor: pointer;
 }
+
+.clearfix:after {
+	display: block;
+	clear: both;
+	content: " ";
+}
+
+
+
+/*MAP*/
 
 #mapdiv {
 	width: 66%;
@@ -109,11 +145,9 @@ nav ul {
 	z-index: 999;
 }
 
-main {
-	position: relative;
-	height: 100%;
-	width: 100%;
-}
+
+
+/*CONTENT WINDOW GENERAL*/
 
 .over_map {
 	display: block;
@@ -127,25 +161,7 @@ main {
 	margin: 0;
 }
 
-.settings {
-	position: absolute;
-	background-color: #CADFAA;
-	border: 2px;
-	border-color: #FA8A25;
-	border-style: solid;
-	border-top: none;
-	z-index: 100;
-	margin: 0 30px;
-	margin-top: -30px;
-	padding: 20px;
-	height: 400px;
-}
-
-.settings_title {
-	color: black;
-}
-
-.welcome {
+.no_session {
 	background-color: #CADFAA;
 	border: 2px;
 	border-color: #FA8A25;
@@ -153,9 +169,36 @@ main {
 	z-index: 100;
 	margin: 30px auto;
 	padding: 50px 30px;
-	height: 400px;
+	height: 450px;
 	width: 60%;
 }
+
+.content {
+	background-color: #CADFAA;
+	border: 2px;
+	border-color: #FA8A25;
+	border-style: solid;
+	border-top: none;
+	margin: -30px 30px 0 30px;
+	padding: 20px;
+	height: 450px;
+}
+
+.info_page {
+	background-color: #CADFAA;
+	border: 2px;
+	border-color: #FA8A25;
+	border-style: solid;
+	border-top: none;
+	margin: -30px 30px 0 30px;
+	padding: 20px;
+	height: 450px;
+	overflow: scroll;
+}
+
+
+
+/*NO_SESSION WINDOWS*/
 
 .myroe {
 	margin-top: -5px;
@@ -167,43 +210,9 @@ main {
 	margin: 20px;
 }
 
-.login {
-	background-color: #CADFAA;
-	border: 2px;
-	border-color: #FA8A25;
-	border-style: solid;
-	z-index: 100;
-	margin: 30px auto;
-	padding: 50px 30px;
-	height: 400px;
-	width: 60%;
-}
 
-.signup {
-	background-color: #CADFAA;
-	border: 2px;
-	border-color: #FA8A25;
-	border-style: solid;
-	z-index: 100;
-	margin: 30px auto;
-	padding: 50px 30px;
-	height: 400px;
-	width: 60%;
-}
 
-.info_page {
-	position: absolute;
-	background-color: #CADFAA;
-	border: 2px;
-	border-color: #FA8A25;
-	border-style: solid;
-	border-top: none;
-	margin: 0 30px;
-	margin-top: -30px;
-	padding: 20px;
-	height: 400px;
-	overflow: scroll;
-}
+/*INFO_PAGE WINDOWS*/
 
 .info_h2 {
 	font-size: 16px;
@@ -223,77 +232,35 @@ main {
 	font-size: 12px;
 }
 
-.delete_user {
-	margin: 20px;
-}
 
-.clearfix:after {
-	display: block;
-	clear: both;
-	content: " ";
-}
 
-.new_fish {
-	position: absolute;
-	background-color: #CADFAA;
-	border: 2px;
-	border-color: #FA8A25;
-	border-style: solid;
-	border-top: none;
-	margin: 0 30px;
-	margin-top: -30px;
-	padding: 20px;
-	height: 400px;
-}
+/*SETTINGS*/
 
-.new_fish li {
-	list-style: none;
-}
 
-.edit_fish {
-	position: absolute;
-	background-color: #CADFAA;
-	border: 2px;
-	border-color: #FA8A25;
-	border-style: solid;
-	border-top: none;
-	margin: 0 30px;
-	margin-top: -30px;
-	padding: 20px;
-	height: 400px;
-}
-
-.edit_fish li {
-	list-style: none;
-}
-
+/*NEW/EDIT FISH*/
 
 .fish_attr {
 	margin: 10px 0;
 }
 
-.bucket .bucket_title {
-	margin-bottom: 10px;
+
+
+/*BUCKET INTERIOR*/
+
+.fish h2 {
+	margin: 5px 0;
+	text-align: left;
 }
 
-.bucket h2 {
-	margin-top: 0;
-	font-size: 20px;
-	font-style: italic;
-}
-
-.bucket .catches_title {
-	margin-bottom: 20px;
-}
-
-.bucket {
-	height: 450px;
-	margin: 30px;
+.fish h3 {
+	text-align: left;
 }
 
 .catches {
-	height: 300px;
+	height: 287px;
 	overflow-y: scroll;
+	box-sizing: border-box;
+	width: 450px;
 	width: 100%;
 	border: 2px;
 	border-style: solid;
@@ -319,14 +286,10 @@ main {
 	max-height: 100%;
 }
 
-.fish h1 {
-	
-	margin: 5px 0;
-}
-
 .fish_info {
 	width: 100%;
 	text-align: left;
+	margin: 3px 0;
 }
 
 .catch_some {
@@ -334,60 +297,135 @@ main {
 	margin-top: 100px;
 }
 
-.infowindow_headings {
-	margin: 7px 0;
-}
+/*INTERMEDIATE WIDTH*/
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 920px) {
 
 	.over_map {
-	width: 280px;
-	text-align: center;
-	background-color: #CADFAA;
-	position: absolute;
-	top: 0;
-	margin: 0 auto;
-	height: 500px;
-	z-index: 100;
+		width: 40%;
+	}
+
+	#mapdiv {
+		width: 60%;
+	}
+
+	.map_cover {
+		width: 60%;
+	}
+
+}
+
+/*INTERMEDIATE WIDTH 2*/
+
+@media only screen and (max-width: 600px) {
+
+	.over_map {
+		width: 45%;
+	}
+
+	#mapdiv {
+		width: 55%;
+	}
+
+	.map_cover {
+		width: 55%;
+	}
+
+}
+
+
+
+/*MOBILE FRIENDLY*/
+
+@media only screen and (max-width: 550px) {
+
+	.over_map {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		height: 440px;
+		width: 100%;
+		z-index: 100;
+		text-align: center;
+		background-color: #CADFAA;
+		
 	}
 
 	#mapdiv {
 		width: 100%;
 	}
 
-	.catches {
-		height: 150px;
+	.map_cover {
+		width: 100%;
 	}
 
-	.settings {
-		height: 400px;
+	nav {
+		margin: 15px 0;
+		padding: 0 15px;
+		border-bottom: 2px;
+		border-bottom-color: #FA8A25;
+		border-bottom-style: solid;
+	}
+
+	nav ul {
+		border: none;
+	}
+	
+	input {
+		margin: 2px;
+	}
+
+	input[type='submit'] {
+	margin: 10px auto;
+	}
+
+	.no_session {
+		padding: 10px;
+		margin: 0 15px;
+		margin-top: -15px;
+		height: 335px;
+		border: none;
+	}
+
+	.content {
+		padding: 10px;
+		margin: 0 15px;
+		margin-top: -15px;
+		height: 335px;
+		border: none;
 	} 
 
-	.welcome {
-		height: 400px;
-	}
-
-	.signup {
-		height: 400px;
-	}
-
 	.info_page {
-		height: 400px;
+		padding: 10px;
+		margin: 0 15px;
+		margin-top: -15px;
+		height: 335px;
+		border: none;
 	}
 
-	.login {
-		height: 400px;
+	.catches {
+		height: 185px;
 	}
 
-	.new_fish {
-		height: 400px;
+	.bucket_location {
+		margin: -10px 0 0 0;
 	}
 
-	.edit_fish {
-		height: 400px;
+	.fish_attr {
+		margin: 5px;
 	}
 
+	.tab_up {
+		display: block;
+	}
+
+	
 }
+
+
+
 
 
 

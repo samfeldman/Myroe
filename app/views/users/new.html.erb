@@ -1,12 +1,12 @@
-<section class="users_new">
-	<div class="signup">
-		<h2>Sign Up</h2>
+<div class="no_session">
+	<h2>Sign Up</h2>
+	<ul>
 		<%= form_for @user do |f| %>
-			<%= f.text_field :username, :placeholder => "username" %>
-			<%= f.email_field :email, :placeholder => "email" %>
-			<%= f.password_field :password, :placeholder => "password" %>
-			<%= f.password_field :password_confirmation, :placeholder => "confirm password" %>
-			<%= f.submit "Sign Up" %>
+			<li>username: <%= f.text_field :username %></li>
+			<li>email: <%= f.email_field :email %></li>
+			<li>password: <%= f.password_field :password %></li>
+			<li>confirm: <%= f.password_field :password_confirmation %></li>
+			<li><%= f.submit "Sign Up" %></li>
 		<% end %>
-	</div>
-</section>
+	</ul>
+</div>

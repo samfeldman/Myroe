@@ -1,11 +1,11 @@
-<div class="bucket">
+<div class="content">
 	<% if @current_user.id == @user.id %>
-		<h1 class="bucket_title">My Bucket</h1>
+		<h2 class="bucket_title">My Bucket</h2>
 	<% else %>
-		<h1 class="bucket_title"><%= @user.username %>'s Bucket</h1>
+		<h2 class="bucket_title"><%= @user.username %>'s Bucket</h2>
 	<% end %>
-	<h2>Location: <%= "#{@user.zipcode}" %></h2>
-	<h1 class="catches_title">Catches</h1>
+	<h4 class="bucket_location">Location: <%= "#{@user.zipcode}" %></h4>
+	<h2 class="catches_title">Catches</h2>
 	<div class="catches">
 		<ul class="catches_ul clearfix">
 			<% @fishes.each do |fish| %>
