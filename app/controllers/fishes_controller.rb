@@ -1,5 +1,7 @@
 class FishesController < ApplicationController
-  
+
+  before_action :validate!
+
   def index
     current_user
     @fishes = Fish.all

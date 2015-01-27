@@ -17,31 +17,15 @@
 		<div id="mapdiv">
 		</div>
 		<section class="over_map clearfix">
-			<% if @current_user %>
+			<% if @current_user != nil %>
 				<nav class="top_nav clearfix">
-					<ul class="clearfix">
-						<li class="bucket_nav"><a href="/users/<%= @current_user.id %>">My Bucket</a></li>
-						<li class="settings_nav">Settings</li>
-						<li><a href="/sessions/destroy">Logout</a></li>
+					<ul class="nav_ul clearfix">
+						<li class="icon"><a href="/users/<%= @current_user.id %>"><img src="/bucket.png" alt="bucket symbol"></a></li>
+						<li class="icon"><a href="/users/<%= @current_user.id %>/edit"><img src="/settings.png" alt="gear symbol"></a></li>
+						<li class="icon"><a href="/fishadvisory"><img src="/fishiconnav.png" alt="fish symbol"></a></li>
+						<li class="icon"><a href="/csoo"><img src="/biohazardicon.png" alt="biohazard symbol"></a></li>
+						<li class="icon"><a href="/sessions/destroy"><img src="/logout.png" alt="power button symbol"></a></li>
 					</ul>
-					<div class="settings_drop content">
-						<h2 class="settings_title">Settings</h2>
-						<%= form_for @current_user do |f| %>
-							<%= f.text_field :username %>
-							<%= f.text_field :zipcode, :placeholder => "zipcode" %>
-							<%= f.email_field :email %>
-							<%= f.password_field :password, :placeholder => "type password here" %>
-							<%= f.password_field :password_confirmation, :placeholder => "confirm password" %>
-							<br>
-							<%= f.submit "update" %>
-							<br>
-							<button>
-								<%= link_to ("delete user"), "/users/#{ @current_user.id }", method: :delete %>
-							</button>
-							<br>
-							<div class="settings_close">CLOSE</div>
-						<% end %>
-					</div>
 				</nav>
 			<% end %>
 			<%= flash[:alert] if flash[:alert] %>

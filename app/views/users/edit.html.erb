@@ -1,0 +1,16 @@
+<div class="settings">
+	<h2 class="settings_title">Settings</h2>
+	<%= form_for @current_user do |f| %>
+		<%= f.text_field :username %>
+		<%= f.text_field :zipcode, :placeholder => "zipcode" %>
+		<%= f.email_field :email %>
+		<%= f.password_field :password, :placeholder => "type password here" %>
+		<%= f.password_field :password_confirmation, :placeholder => "confirm password" %>
+		<%= f.submit "update" %>
+		<div class="delete_user">
+		<%= link_to ("delete user"), "/users/#{ @current_user.id }", method: :delete %>
+		</div>
+	<% end %>
+</div>
+
+<!-- <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a>, <a href="http://fontawesome.io" title="Dave Gandy">Dave Gandy</a>, <a href="http://www.unocha.org" title="OCHA">OCHA</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>         is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div> -->

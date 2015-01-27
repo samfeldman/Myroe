@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-	
+
 	def index
 	end
 
@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
  	end
 
 	def create
+		current_user
 		@user = User.where(email: user_params[:email]).first
 		if @user && @user.password == user_params[:password]
 			session[:user_id] = @user.id

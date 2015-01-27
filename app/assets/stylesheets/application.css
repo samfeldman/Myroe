@@ -21,6 +21,72 @@ body, html {
 	font-family: 'Muli', sans-serif;
 }
 
+input {
+	margin: 10px;
+}
+
+input[type='submit'] {
+	margin: auto 50px;
+}
+
+input:hover {
+	cursor: pointer
+}
+
+button {
+	margin: 10px 15px;
+	float: center;
+}
+
+
+ul {
+	list-style: none;
+	padding: 0;
+	display: block;
+	max-width: 100%;
+}
+
+li {
+	float: left;
+}
+
+a {
+	text-decoration: none;
+	color: #E49307;
+}
+
+a:hover {
+	color: #FFE168;
+	cursor: pointer;
+}
+
+nav {
+	margin: 30px;
+	color: #E49307;
+	text-decoration: none;
+}
+
+nav ul {
+	display: block;
+	margin: 0;
+	max-width: 100%;
+	border-bottom: 2px;
+	border-bottom-color: #FA8A25;
+	border-bottom-style: solid;
+}
+
+.icon {
+	display: block;
+	box-sizing: border-box;
+	width: 20%;
+	margin: 0 auto;
+	padding: 3px;
+}
+
+.icon:hover {
+	cursor: pointer;
+}
+
 #mapdiv {
 	width: 66%;
 	height: 100%;
@@ -61,7 +127,7 @@ main {
 	margin: 0;
 }
 
-.settings_drop {
+.settings {
 	position: absolute;
 	background-color: #CADFAA;
 	border: 2px;
@@ -69,7 +135,8 @@ main {
 	border-style: solid;
 	border-top: none;
 	z-index: 100;
-	margin-right: 30px;
+	margin: 0 30px;
+	margin-top: -30px;
 	padding: 20px;
 	height: 400px;
 }
@@ -124,31 +191,46 @@ main {
 	width: 60%;
 }
 
-input {
-	margin: 10px;
+.info_page {
+	position: absolute;
+	background-color: #CADFAA;
+	border: 2px;
+	border-color: #FA8A25;
+	border-style: solid;
+	border-top: none;
+	margin: 0 30px;
+	margin-top: -30px;
+	padding: 20px;
+	height: 400px;
+	overflow: scroll;
 }
 
-input:hover {
-	cursor: pointer
+.info_h2 {
+	font-size: 16px;
 }
 
-button {
-	margin: 10px;
+.info_h1 {
+	font-size: 22px;
 }
 
-.settings_close {
-	margin: 10px;
-	cursor: pointer;
+.info_par {
+	text-align: left;
+	font-size: 14px;
+}
+
+.info_link {
+	text-align: left;
+	font-size: 12px;
+}
+
+.delete_user {
+	margin: 20px;
 }
 
 .clearfix:after {
 	display: block;
 	clear: both;
 	content: " ";
-}
-
-.bucket_drop, .settings_drop {
-	display: none;
 }
 
 .new_fish {
@@ -190,53 +272,6 @@ button {
 	margin: 10px 0;
 }
 
-ul {
-	list-style: none;
-	padding: 0;
-	display: block;
-	max-width: 100%;
-}
-
-li {
-	float: left;
-}
-
-a {
-	text-decoration: none;
-	color: #E49307;
-}
-
-a:hover {
-	color: #FFE168;
-}
-
-nav {
-	margin: 30px;
-	color: #E49307;
-	text-decoration: none;
-}
-
-nav ul {
-	display: block;
-	margin: 0;
-	max-width: 100%;
-	border-bottom: 2px;
-	border-bottom-color: #FA8A25;
-	border-bottom-style: solid;
-}
-
-nav li {
-	display: inline-block;
-	float: center;
-	margin: 0 auto;
-	padding: 10px 10px;
-} 
-
-.top_nav li:hover {
-	color: #FFE168;
-	cursor: pointer;
-}
-
 .bucket .bucket_title {
 	margin-bottom: 10px;
 }
@@ -252,16 +287,14 @@ nav li {
 }
 
 .bucket {
-	height: 445px;
-	box-sizing: border-box;
-	width: 66%;
-	float: center;
-	margin: 30px auto;
+	height: 450px;
+	margin: 30px;
 }
 
 .catches {
+	height: 300px;
 	overflow-y: scroll;
-	height: 50%;
+	width: 100%;
 	border: 2px;
 	border-style: solid;
 	border-color: #FA8A25;
@@ -301,8 +334,58 @@ nav li {
 	margin-top: 100px;
 }
 
-@media only screen and (min-width: 420px) {
+.infowindow_headings {
+	margin: 7px 0;
+}
 
+@media only screen and (max-width: 800px) {
+
+	.over_map {
+	width: 280px;
+	text-align: center;
+	background-color: #CADFAA;
+	position: absolute;
+	top: 0;
+	margin: 0 auto;
+	height: 500px;
+	z-index: 100;
+	}
+
+	#mapdiv {
+		width: 100%;
+	}
+
+	.catches {
+		height: 150px;
+	}
+
+	.settings {
+		height: 400px;
+	} 
+
+	.welcome {
+		height: 400px;
+	}
+
+	.signup {
+		height: 400px;
+	}
+
+	.info_page {
+		height: 400px;
+	}
+
+	.login {
+		height: 400px;
+	}
+
+	.new_fish {
+		height: 400px;
+	}
+
+	.edit_fish {
+		height: 400px;
+	}
 
 }
 

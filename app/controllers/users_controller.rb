@@ -1,5 +1,20 @@
-class UsersController < ApplicationController
-  
+class UsersController < ApplicationController 
+
+ before_action :validate!, except: [:new, :create, :update]
+
+  def csoo
+    current_user
+  end
+
+  def fishadvisory
+    current_user
+  end
+
+  def edit
+    current_user
+    @user = User.find(params[:id])
+  end
+
   def show
     current_user
     @user = User.find(params[:id])
@@ -21,11 +36,14 @@ class UsersController < ApplicationController
   def update
     current_user
     @user = User.find(params[:id])
-    if @current_user.id == @user.id
-      @user.update(user_params)
+    if @current_user == @user
+      if @user.update(user_params)
       flash[:notice] = "Updates saved!"
-    else
+      else
       flash[:alert] = "Updates not saved; please try again."
+      end
+    else
+      flash[:alert] = "You cannot alter other user's settings."
     end
     redirect_to :back
   end

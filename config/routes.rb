@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   
   root "sessions#index"
   get "sessions/destroy"
-  resources :users, except: [:index, :edit]
+  resources :users, except: [:index]
+  get "csoo" => "users#csoo"
+  get "fishadvisory" => "users#fishadvisory"
   resources :sessions, except: [:edit, :update, :show]
   resources :fishes
   resources :outfalls, only: [:index]

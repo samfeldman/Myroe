@@ -15,22 +15,8 @@
 //= require_tree .
 
 $(function() {
-	
-	$( ".bucket_nav" ).on( "click", function(){
-		$( ".bucket_drop" ).show();
-	});
 
-	$( ".settings_nav" ).on( "click", function(){
-		$( ".settings_drop" ).show();
-	});
-
-	$( ".bucket_close" ).on( "click", function(){
-		$( ".bucket_drop" ).hide();
-	});
-
-	$( ".settings_close" ).on( "click", function(){
-		$( ".settings_drop" ).hide();
-	});
+	var fishMarker = [];
 
 	var latitude = 0;
 	var longitude = 0;
@@ -41,7 +27,7 @@ $(function() {
 
 	function initialize() {
 		var mapOptions = {
-			zoom: 12,
+			zoom: 13,
 			center: new google.maps.LatLng(latitude, longitude)
 		};
 
@@ -66,16 +52,10 @@ $(function() {
 			window.location.href = "http://localhost:3000/fishes/new?lat="+ event.latLng.k+"&lng="+ event.latLng.D;
 		});
 
-
-		$( ".java_fish" ).on( "click", function(event){
-			event.preventDefault();
-			map.setCenter({lat: parseFloat(this.dataset.lat), lng: parseFloat(this.dataset.lng)});
-		});
-
 		var fishscrollid = window.location.search.split("?fish_id=")[1];
-		console.log(fishscrollid);
-		if (fishscrollid) {
-			$('.catches').scrollTop($('.fish-'+fishscrollid).offset().top);
+		if (fishscrollid != undefined) {
+			$('.catches').scrollTop(0);
+			$('.catches').scrollTop($('.fish-' + fishscrollid).position().top - $('.catches').position().top);
 		};
 
 	};
@@ -116,9 +96,22 @@ $(function() {
 						time_caught: time_caught,
 						icon: image
 					});
+
 					
 					google.maps.event.addListener(fishMarker, 'click', function() {
 						window.location.href = "http://localhost:3000/users/" + this.user_id + "?fish_id=" + this.fish_id
+					});
+
+					window['fishMarker' + fishMarker.fish_id] = fishMarker
+
+					$(".java_fish[data-fish_id="+fishMarker.fish_id+"]").click(function(){
+						event.preventDefault();
+
+						map.setCenter({lat: parseFloat(this.dataset.lat), lng: parseFloat(this.dataset.lng)});
+
+						window['fishMarker' + this.dataset.fish_id].setAnimation(google.maps.Animation.BOUNCE);
+						that = this
+						setTimeout(function(){ window['fishMarker' + that.dataset.fish_id].setAnimation(null); }, 1400);
 					});
 
 		        }
@@ -131,33 +124,47 @@ $(function() {
 			})
 			.done(function( outfalls ) {
 				for(var i = 0; i < outfalls.length; i++){
-					var image = '/outfall.png'
-					var fish_type = fishes[i].fish_type;
-					var number = fishes[i].number;
-					var user_id = fishes[i].user_id;
-					var weather = fishes[i].weather;
-					var comments = fishes[i].comments;
-					var time_caught = fishes[i].time_caught;
-					var fish_id = fishes[i].id;
-					var fishLat = fishes[i].lat;
-					var fishLong = fishes[i].long;
-					var fishLatlng = new google.maps.LatLng(fishLat,fishLong);
-					var fishMarker = new google.maps.Marker({
-						position: fishLatlng,
+					var outfall_id = outfalls[i].id
+					var site = outfalls[i].site;
+					var description = outfalls[i].description;
+					var lat = outfalls[i].lat;
+					var lng = outfalls[i].lng;
+					var percent_unsafe = outfalls[i].percent_unsafe;
+					var icon_scale_y = ((parseFloat(percent_unsafe))*5 + 3)*10*64/83;
+					var icon_scale_x = ((parseFloat(percent_unsafe))*5 + 3)*10;
+					var outfallLatlng = new google.maps.LatLng(lat,lng);
+					var icon = {
+						    url: "/biohazard.png",
+						    scaledSize: new google.maps.Size(icon_scale_y, icon_scale_x),
+						    origin: new google.maps.Point(0, 0), 
+						    anchor: new google.maps.Point(0, 0)
+						};
+					var outfallMarker = new google.maps.Marker({
+						position: outfallLatlng,
 						map: map,
 						animation: google.maps.Animation.DROP,
-						fish_type: fish_type,
-						fish_id: fish_id,
-						number: number,
-						user_id: user_id,
-						weather: weather,
-						comments: comments,
-						time_caught: time_caught,
-						icon: image
+						site: site,
+						description: description,
+						lat: lat,
+						lng: lng,
+						percent_unsafe: percent_unsafe*100,
+						icon: icon,
+						outfall_id: outfall_id
 					});
 					
-					google.maps.event.addListener(fishMarker, 'click', function() {
-						window.location.href = "http://localhost:3000/users/" + this.user_id + "?fish_id=" + this.fish_id
+					var infowindow = new google.maps.InfoWindow({
+      					content: '',
+      					maxWidth: 125,
+      					pixelOffset: 0
+  					});
+
+					google.maps.event.addListener(outfallMarker, 'click', function() {
+						boxText = document.createElement("html");
+						boxText.innerHTML = 
+						"<head><link href='http://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'><link href='/assets/application.css?body=1' media='all' rel='stylesheet'></head><body><h4 class='infowindow_headings'>Location: </h4><h3 class='infowindow_headings'>" + this.description + "</h3>" +
+      							 "<h4 class='infowindow_headings'>Percentage of time water levels of <a href='/csoo'>fecal coliform</a> too high to swim: </h4><h3 class='infowindow_headings'>" + this.percent_unsafe + "%</h3><body>";
+						infowindow.setContent(boxText);
+						infowindow.open(map,this);
 					});
 
 		        }
