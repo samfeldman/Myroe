@@ -21,7 +21,7 @@ $(function() {
 			$('.content').slideUp();
 		};
 		if ($('.info_page').length) {
-			$('.content').slideUp();
+			$('.info_page').slideUp();
 		};
   		$('.over_map').height('66px');
   		$('.tab_up').hide();
@@ -33,20 +33,22 @@ $(function() {
 			$('.content').slideDown();
 		};
 		if ($('.info_page').length) {
-			$('.content').slideDown();
+			$('.info_page').slideDown();
 		};
   		$('.over_map').height('400px');
   		$('.tab_down').hide();
   		$('.tab_up').show();
 	});
 
-	// if ($(window).width() >= 550) {	
-	// 	$('.over_map').height('100%');
-	// };
-
-	// if ($(window).width() <= 550) {	
-	// 	$('.over_map').height('400px');
-	// };
+	$(window).resize(function () {
+    	if ($(window).width() >= 550) {	
+			$('.over_map').slideDown();
+			$('.over_map').height('100%');
+			$('.content').slideDown();
+			$('.info_page').slideDown();
+		};
+	});
+	
 
 	var fishMarker = [];
 
@@ -102,18 +104,27 @@ $(function() {
 				type: "GET",
 				url: "/fishes",
 			})
-			.done(function( fishes ) {
-				for(var i = 0; i < fishes.length; i++){
-					var image = '/fishicon.png'
-					var fish_type = fishes[i].fish_type;
-					var number = fishes[i].number;
-					var user_id = fishes[i].user_id;
-					var weather = fishes[i].weather;
-					var comments = fishes[i].comments;
-					var time_caught = fishes[i].time_caught;
-					var fish_id = fishes[i].id;
-					var fishLat = fishes[i].lat;
-					var fishLong = fishes[i].long;
+			.done(function( fishes, current_user ) {
+			// 	debugger;
+				fish = fishes["fishes"];
+				var current_user_id = fishes["current_user"].id;
+				for(var i = 0; i < fish.length; i++){
+					var user_id = fish[i].user_id;
+					if (user_id == current_user_id) {
+						var image = '/myfish.png'
+						console.log('myfish')
+					} else {
+						var image = '/fishicon.png'
+						console.log('fishicon')
+					}
+					var fish_type = fish[i].fish_type;
+					var number = fish[i].number;
+					var weather = fish[i].weather;
+					var comments = fish[i].comments;
+					var time_caught = fish[i].time_caught;
+					var fish_id = fish[i].id;
+					var fishLat = fish[i].lat;
+					var fishLong = fish[i].long;
 					var fishLatlng = new google.maps.LatLng(fishLat,fishLong);
 					var fishMarker = new google.maps.Marker({
 						position: fishLatlng,
@@ -129,7 +140,8 @@ $(function() {
 						icon: image
 					});
 
-					
+					console.log()
+
 					google.maps.event.addListener(fishMarker, 'click', function() {
 						window.location.href = "http://localhost:3000/users/" + this.user_id + "?fish_id=" + this.fish_id
 					});
@@ -143,7 +155,7 @@ $(function() {
 
 						window['fishMarker' + this.dataset.fish_id].setAnimation(google.maps.Animation.BOUNCE);
 						that = this
-						setTimeout(function(){ window['fishMarker' + that.dataset.fish_id].setAnimation(null); }, 1400);
+						setTimeout(function(){ window['fishMarker' + that.dataset.fish_id].setAnimation(null); }, 4200);
 					});
 
 		        }

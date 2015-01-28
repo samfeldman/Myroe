@@ -5,7 +5,7 @@ class FishesController < ApplicationController
   def index
     current_user
     @fishes = Fish.all
-    render json: @fishes
+    render json: {:fishes => @fishes, :current_user => @current_user}
   end
 
   def show
