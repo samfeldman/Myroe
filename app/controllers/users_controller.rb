@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def show
     current_user
     @user = User.find(params[:id])
-    @fishes = @user.fish
+    @fishes = @user.fish.order('time_caught DESC')
   end
 
   def new

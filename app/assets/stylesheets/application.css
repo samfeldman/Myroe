@@ -352,9 +352,152 @@ form {
 
 
 
+/*SMALL WIDTH*/
+
+@media all and (max-width: 550px) {
+
+	html {
+		overflow: hidden;
+	}
+
+	.over_map {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		height: 400px;
+		width: 100%;
+		z-index: 999;
+		text-align: center;
+		background-color: transparent;	
+	}
+
+	nav {
+		background-color: #CADFAA;
+	}
+
+	#mapdiv {
+		box-sizing: border-box;
+		margin-top: 0;
+		height: 100%;
+		width: 100%;
+	}
+
+	.map_cover {
+		box-sizing: border-box;
+		margin-top: 0;
+		height: 100%;
+		width: 100%;
+	}
+
+	nav {
+		margin: 0 0 15px 0;
+		padding: 15px 0 0 0;
+		border-bottom: 4px;
+		border-bottom-color: #FA8A25;
+		border-bottom-style: solid;
+	}
+
+	nav ul {
+		border: none;
+	}
+	
+	input {
+		margin: 2px;
+	}
+
+	input[type='submit'] {
+	margin: 10px auto;
+	}
+
+	form {
+		height: 223px;
+		overflow: scroll;
+		margin: 20px 0;
+		padding: 10px 30px;
+	}
+
+	.no_session {
+		padding: 15px;
+		margin: 68px auto;
+		height: 355px;
+		width: 225px;
+	}
+
+	.content {
+		padding: 15px;
+		margin: 20px auto;
+		margin-top: -15px;
+		height: 295px;
+		width: 220px;
+	} 
+
+	.info_page {
+		padding: 15px;
+		margin: 20px auto;
+		margin-top: -15px;
+		height: 295px;
+		width: 220px;
+	}
+
+	.catches {
+		height: 145px;
+	}
+
+	.bucket_location {
+		margin: -10px 0 0 0;
+	}
+
+	.fish_attr {
+		margin: 5px;
+	}
+
+	.tab_up {
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 405px;
+		z-index: 999;
+		height: 30px;
+		width: 60px;
+		margin: 0 auto;
+		background-color: #CADFAA;
+		border: 2px;
+		border-color: #FA8A25;
+		border-style: solid;
+	}
+
+	.tab_up > img {
+		margin: 0 15px;
+	}
+
+	.tab_down {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 73px;
+		z-index: 999;
+		height: 30px;
+		width: 60px;
+		margin: 0 auto;
+		background-color: #CADFAA;	
+		border: 2px;
+		border-color: #FA8A25;
+		border-style: solid;
+	}
+
+	.tab_down > img {
+		margin: 0 15px;
+	}
+
+}
+
+
 /*MOBILE FRIENDLY*/
 
-@media only screen and (max-device-width: 550px) {
+@media all and (max-device-width: 550px) {
 
 	html {
 		overflow: hidden;
