@@ -16,6 +16,13 @@
 
 $(function() {
 
+	var env = $(".env").data("env");
+	if (env == "development"){
+		var host = "localhost:3000";
+	} else {
+		var host = "myroe.herokuapp.com";
+	}
+
 	$('.tab_up').click(function(){
 		if ($('.content').length) {
 			$('.content').slideUp();
@@ -83,7 +90,7 @@ $(function() {
 
 		google.maps.event.addListener(map, 'click', function(event) {
 			placeMarker(event.latLng);
-			window.location.href = "http://localhost:3000/fishes/new?lat="+ event.latLng.k+"&lng="+ event.latLng.D;
+			window.location.href = "http://"+ host +"/fishes/new?lat="+ event.latLng.k+"&lng="+ event.latLng.D;
 		});
 
 		var fishscrollid = window.location.search.split("?fish_id=")[1];
@@ -143,7 +150,7 @@ $(function() {
 					console.log()
 
 					google.maps.event.addListener(fishMarker, 'click', function() {
-						window.location.href = "http://localhost:3000/users/" + this.user_id + "?fish_id=" + this.fish_id
+						window.location.href = "http://"+ host +"/users/" + this.user_id + "?fish_id=" + this.fish_id
 					});
 
 					window['fishMarker' + fishMarker.fish_id] = fishMarker
