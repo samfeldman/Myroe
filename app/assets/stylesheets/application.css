@@ -76,8 +76,14 @@ h3 {
 }
 
 .tab_up {
-		display: none;
-	}
+	display: none;
+}
+
+.tab_down {
+	display: none;
+}
+
+
 
 /*NAV*/
 
@@ -142,7 +148,7 @@ nav li {
 	display: block;
 	right: 0px; 
 	top: 0px; 
-	z-index: 999;
+	z-index: 998;
 }
 
 
@@ -157,7 +163,7 @@ nav li {
 	background-color: #CADFAA;
 	position: absolute;
 	height: 100%;
-	z-index: 99;
+	z-index: 999;
 	margin: 0;
 }
 
@@ -232,9 +238,6 @@ nav li {
 	font-size: 12px;
 }
 
-
-
-/*SETTINGS*/
 
 
 /*NEW/EDIT FISH*/
@@ -345,19 +348,26 @@ nav li {
 		left: 0;
 		right: 0;
 		margin: 0 auto;
-		height: 440px;
+		height: 400px;
 		width: 100%;
 		z-index: 100;
 		text-align: center;
 		background-color: #CADFAA;
+		border-bottom: 2px;
+		border-bottom-color: #FA8A25;
+		border-bottom-style: solid;
 		
 	}
 
 	#mapdiv {
+		position: absolute;
+		top: 68px;
 		width: 100%;
 	}
 
 	.map_cover {
+		position: absolute;
+		top: 68%;
 		width: 100%;
 	}
 
@@ -385,7 +395,7 @@ nav li {
 		padding: 10px;
 		margin: 0 15px;
 		margin-top: -15px;
-		height: 335px;
+		height: 295px;
 		border: none;
 	}
 
@@ -393,7 +403,7 @@ nav li {
 		padding: 10px;
 		margin: 0 15px;
 		margin-top: -15px;
-		height: 335px;
+		height: 295px;
 		border: none;
 	} 
 
@@ -401,12 +411,12 @@ nav li {
 		padding: 10px;
 		margin: 0 15px;
 		margin-top: -15px;
-		height: 335px;
+		height: 295px;
 		border: none;
 	}
 
 	.catches {
-		height: 185px;
+		height: 145px;
 	}
 
 	.bucket_location {
@@ -419,9 +429,43 @@ nav li {
 
 	.tab_up {
 		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 405px;
+		z-index: 999;
+		height: 30px;
+		width: 60px;
+		margin: 0 auto;
+		background-color: #CADFAA;
+		border: 2px;
+		border-color: #FA8A25;
+		border-style: solid;
 	}
 
-	
+	.tab_up > img {
+		margin: 0 15px;
+	}
+
+	.tab_down {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 73px;
+		z-index: 999;
+		height: 30px;
+		width: 60px;
+		margin: 0 auto;
+		background-color: #CADFAA;	
+		border: 2px;
+		border-color: #FA8A25;
+		border-style: solid;
+	}
+
+	.tab_down > img {
+		margin: 0 15px;
+	}
+
 }
 
 

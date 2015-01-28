@@ -16,6 +16,30 @@
 
 $(function() {
 
+	$('.tab_up').click(function(){
+		if ($('.content').length) {
+			$('.content').slideUp();
+		};
+		if ($('.info_page').length) {
+			$('.content').slideUp();
+		};
+  		$('.over_map').height('66px');
+  		$('.tab_up').hide();
+  		$('.tab_down').show();
+	});
+
+	$('.tab_down').click(function(){
+		if ($('.content').length) {
+			$('.content').slideDown();
+		};
+		if ($('.info_page').length) {
+			$('.content').slideDown();
+		};
+  		$('.over_map').height('400px');
+  		$('.tab_down').hide();
+  		$('.tab_up').show();
+	});
+
 	var fishMarker = [];
 
 	var latitude = 0;
