@@ -125,6 +125,16 @@ nav li {
 	content: " ";
 }
 
+form {
+	box-sizing: border-box;
+	margin-top: 40px;
+	width: 450px;
+	width: 100%;
+	background-color: #CADFAA;
+	border: 2px;
+	border-style: solid;
+	border-color: #FA8A25;
+}
 
 
 /*MAP*/
@@ -151,6 +161,9 @@ nav li {
 	z-index: 998;
 }
 
+.info_window {
+	margin: 5px 0;
+}
 
 
 /*CONTENT WINDOW GENERAL*/
@@ -168,7 +181,7 @@ nav li {
 }
 
 .no_session {
-	background-color: #CADFAA;
+	background-color: white;
 	border: 2px;
 	border-color: #FA8A25;
 	border-style: solid;
@@ -180,7 +193,7 @@ nav li {
 }
 
 .content {
-	background-color: #CADFAA;
+	background-color: white;
 	border: 2px;
 	border-color: #FA8A25;
 	border-style: solid;
@@ -191,7 +204,7 @@ nav li {
 }
 
 .info_page {
-	background-color: #CADFAA;
+	background-color: white;
 	border: 2px;
 	border-color: #FA8A25;
 	border-style: solid;
@@ -207,7 +220,7 @@ nav li {
 /*NO_SESSION WINDOWS*/
 
 .myroe {
-	margin-top: -5px;
+	margin-top: 5px;
 	font-size: 40px;
 	font-weight: bold;
 }
@@ -265,6 +278,7 @@ nav li {
 	box-sizing: border-box;
 	width: 450px;
 	width: 100%;
+	background-color: #CADFAA;
 	border: 2px;
 	border-style: solid;
 	border-color: #FA8A25;
@@ -342,6 +356,10 @@ nav li {
 
 @media only screen and (max-width: 550px) {
 
+	main {
+		background-color: #CADFAA;
+	}
+
 	.over_map {
 		position: absolute;
 		top: 0;
@@ -350,37 +368,29 @@ nav li {
 		margin: 0 auto;
 		height: 400px;
 		width: 100%;
-		z-index: 100;
+		z-index: 999;
 		text-align: center;
-		background-color: #CADFAA;
-		border-bottom: 2px;
-		border-bottom-color: #FA8A25;
-		border-bottom-style: solid;
-		
+		background-color: transparent;	
 	}
 
+
 	#mapdiv {
-		position: absolute;
-		top: 68px;
+		box-sizing: border-box;
+		margin-top: 68px;
+		height: 100%;
 		width: 100%;
 	}
 
 	.map_cover {
-		position: absolute;
-		top: 68%;
+		box-sizing: border-box;
+		margin-top: 68px;
+		height: 100%;
 		width: 100%;
 	}
 
 	nav {
-		margin: 15px 0;
-		padding: 0 15px;
-		border-bottom: 2px;
-		border-bottom-color: #FA8A25;
-		border-bottom-style: solid;
-	}
-
-	nav ul {
-		border: none;
+		margin: 0 0 15px 0;
+		padding: 15px 0 0 0;
 	}
 	
 	input {
@@ -391,28 +401,34 @@ nav li {
 	margin: 10px auto;
 	}
 
+	form {
+		height: 223px;
+		overflow: scroll;
+		margin: 20px 0;
+		padding: 10px 30px;
+	}
+
 	.no_session {
-		padding: 10px;
-		margin: 0 15px;
-		margin-top: -15px;
-		height: 295px;
-		border: none;
+		padding: 15px;
+		margin: 68px auto;
+		height: 355px;
+		width: 225px;
 	}
 
 	.content {
-		padding: 10px;
-		margin: 0 15px;
+		padding: 15px;
+		margin: 20px auto;
 		margin-top: -15px;
 		height: 295px;
-		border: none;
+		width: 220px;
 	} 
 
 	.info_page {
-		padding: 10px;
-		margin: 0 15px;
+		padding: 15px;
+		margin: 20px auto;
 		margin-top: -15px;
 		height: 295px;
-		border: none;
+		width: 220px;
 	}
 
 	.catches {

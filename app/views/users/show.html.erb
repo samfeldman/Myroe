@@ -4,7 +4,17 @@
 	<% else %>
 		<h2 class="bucket_title"><%= @user.username %>'s Bucket</h2>
 	<% end %>
-	<h4 class="bucket_location">Location: <%= "#{@user.zipcode}" %></h4>
+	<h4 class="bucket_location">Location: 
+		<%if @user.zipcode != nil %>
+			<%= "#{@user.zipcode}" %>
+		<% else %>
+			<% if @current_user.id == @user.id %>
+				<a href="/users/<%= @current_user.id %>/edit">add</a>
+			<% else %>
+				none
+			<% end %>
+		<% end %>
+	</h4>
 	<h2 class="catches_title">Catches</h2>
 	<div class="catches">
 		<ul class="catches_ul clearfix">
@@ -15,7 +25,13 @@
 					</li>
 			<% end %>
 		<% if @fishes.count == 0 %>
-		<li class="fish_li catch_some">Catch some fish!</li>
+		<li class="fish_li catch_some">
+			<% if @current_user.id == @user.id %>
+				Catch some fish!
+			<% else %>
+				No fish caught yet.
+			<% end %>
+		</li>
 		<% end %>
 		</ul>
 	</div>

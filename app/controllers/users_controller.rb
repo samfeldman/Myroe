@@ -21,15 +21,25 @@ class UsersController < ApplicationController
     @fishes = @user.fish
   end
 
+  def new
+    current_user
+    @user = User.new
+    if @current_user != nil
+      redirect_to "/users/#{@current_user.id}" 
+    end
+  end
+
   def create
     current_user
     @user = User.new(user_params)
-    if @user.save!
+    if @user.save
       session[:user_id] = @user.id
       redirect_to "/users/#{@user.id}"    
     else 
-      flash[:alert] = @user.errors.full_messages
-      redirect_to :back
+      flash[:alert] = @user.errors.full_messages.join(", ")
+      p "flashes are working"
+      redirect_to '/users/new'
+      p "redirect works"
     end
   end
 
@@ -40,7 +50,7 @@ class UsersController < ApplicationController
       if @user.update(user_params)
       flash[:notice] = "Updates saved!"
       else
-      flash[:alert] = "Updates not saved; please try again."
+      flash[:alert] = "Updates not saved; please fill in password field."
       end
     else
       flash[:alert] = "You cannot alter other user's settings."
@@ -58,11 +68,6 @@ class UsersController < ApplicationController
       redirect_to :back
     end
     redirect_to '/'
-  end
-
-  def new
-    current_user
-    @user = User.new
   end
 
   private

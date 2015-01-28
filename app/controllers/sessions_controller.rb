@@ -1,9 +1,18 @@
 class SessionsController < ApplicationController
 
 	def index
+		current_user
+		if @current_user != nil
+      		redirect_to "/users/#{@current_user.id}" 
+    	end
 	end
 
 	def new
+		current_user
+		@user = User.new
+		if @current_user != nil
+      		redirect_to "/users/#{@current_user.id}" 
+    	end
  	end
 
 	def create
@@ -12,9 +21,12 @@ class SessionsController < ApplicationController
 		if @user && @user.password == user_params[:password]
 			session[:user_id] = @user.id
 			redirect_to "/users/#{@user.id}"
+		elsif @user == nil
+			flash[:alert] = "User doesn't exist, please try again."
+			redirect_to '/sessions/new'
 		else 
-			flash[:alert] = "login failed; please try again."
-			redirect_to "/"
+			flash[:alert] = "Correct your passwords and try again."
+			redirect_to '/sessions/new'
 		end
 	end
 

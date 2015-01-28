@@ -24,6 +24,8 @@
 		<li><%= f.submit "create fish" %></li>
 		<% end %> 
 	</ul>
+	<%= flash[:alert] if flash[:alert] %>
+	<%= flash[:notice] if flash[:notice] %>
 </div>
 
 

@@ -28,13 +28,11 @@
 					</ul>
 				</nav>
 			<% end %>
-			<%= flash[:alert] if flash[:alert] %>
-			<%= flash[:notice] if flash[:notice] %>
 			<%= yield %>
 		</section>
 		<%if @current_user != nil %>
 			<div class="tab_up">
-				<img src="/carrot.png" alt="triangle icon">
+				<img src="/carrotup.png" alt="triangle icon">
 			</div>
 			<div class="tab_down">
 				<img src="/carrot.png" alt="triangle icon">

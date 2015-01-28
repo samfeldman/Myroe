@@ -40,6 +40,14 @@ $(function() {
   		$('.tab_up').show();
 	});
 
+	// if ($(window).width() >= 550) {	
+	// 	$('.over_map').height('100%');
+	// };
+
+	// if ($(window).width() <= 550) {	
+	// 	$('.over_map').height('400px');
+	// };
+
 	var fishMarker = [];
 
 	var latitude = 0;
@@ -185,8 +193,8 @@ $(function() {
 					google.maps.event.addListener(outfallMarker, 'click', function() {
 						boxText = document.createElement("html");
 						boxText.innerHTML = 
-						"<head><link href='http://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'><link href='/assets/application.css?body=1' media='all' rel='stylesheet'></head><body><h4 class='infowindow_headings'>Location: </h4><h3 class='infowindow_headings'>" + this.description + "</h3>" +
-      							 "<h4 class='infowindow_headings'>Percentage of time water levels of <a href='/csoo'>fecal coliform</a> too high to swim: </h4><h3 class='infowindow_headings'>" + this.percent_unsafe + "%</h3><body>";
+						"<head><link href='http://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'><link href='/assets/application.css?body=1' media='all' rel='stylesheet'></head><body><h4 class='info_window'>Location: </h4><h3 class='info_window'>" + this.description + "</h3>" +
+      							 "<h4 class='info_window'>Percentage of time water levels of <a href='/csoo'>fecal coliform</a> too high to swim: </h4><h3 class='info_window'>" + this.percent_unsafe + "%</h3></body>";
 						infowindow.setContent(boxText);
 						infowindow.open(map,this);
 					});
