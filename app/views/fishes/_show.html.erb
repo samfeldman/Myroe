@@ -7,7 +7,7 @@
 	<li class="fish_info">notes: <%="#{ fish.comments }"%></li>
 	<% if @current_user == fish.user %>
 		<li class="fish_info"><a href="/fishes/<%="#{ fish.id }"%>/edit">edit fish</a></li>
-		<li class="delete_fish">
+		<li class="fish_info">
 				<%= link_to ("delete fish"), "/fishes/#{ fish.id }", method: :delete %></li>
 	<% end %>
 </ul>
