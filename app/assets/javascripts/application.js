@@ -90,7 +90,7 @@ $(function() {
 
 		// fish warning area polygons
 
-		// Arthur Kill
+		// Arthur Kill, Newark Bay and Kill Van Kull
 		var arthurkill;
 		var arthurkillCoords = [
 		    new google.maps.LatLng(40.502016, -74.277058),
@@ -109,10 +109,15 @@ $(function() {
 			new google.maps.LatLng(40.580611, -74.157204),
 		    new google.maps.LatLng(40.595733, -74.163985),
 		    new google.maps.LatLng(40.606095, -74.171881),
-			new google.maps.LatLng(40.625641, -74.165701),
-		    new google.maps.LatLng(40.631764, -74.174284),
-		    new google.maps.LatLng(40.644269, -74.180464),
-			new google.maps.LatLng(40.651758, -74.177460),
+			new google.maps.LatLng(40.625641, -74.165701), //Arthur kills east point
+			new google.maps.LatLng(40.631634, -74.161152),
+		 	new google.maps.LatLng(40.642446, -74.089612), //NEW EAST POINT south
+			new google.maps.LatLng(40.656056, -74.093904), //NEW EAST POINT NORTH
+			new google.maps.LatLng(40.654884, -74.117335),
+			new google.maps.LatLng(40.653126, -74.121198),
+			new google.maps.LatLng(40.649479, -74.123515),
+			new google.maps.LatLng(40.649154, -74.138106),
+			new google.maps.LatLng(40.651758, -74.177460), // Arthur Kills north point
 		    new google.maps.LatLng(40.648274, -74.194626),
 		    new google.maps.LatLng(40.633685, -74.210419),
 			new google.maps.LatLng(40.625738, -74.212651),
@@ -138,45 +143,9 @@ $(function() {
 		arthurkill.setMap(map);
 
 
-		// Atlantic Ocean/Long Island South Shore
-		var atlocean;
-		var atloceanCoords = [
-		    new google.maps.LatLng(40.598034, -73.732474),
-		    new google.maps.LatLng(40.597252, -73.761656),
-			new google.maps.LatLng(40.591386, -73.797190),
-			new google.maps.LatLng(40.585715, -73.817274),
-			new google.maps.LatLng(40.581544, -73.832037),
-			new google.maps.LatLng(40.576850, -73.848345),
-			new google.maps.LatLng(40.560094, -73.898127),
-			new google.maps.LatLng(40.559050, -73.911345),
-			new google.maps.LatLng(40.547834, -73.949282),
-			new google.maps.LatLng(40.472788, -74.013136),
-			new google.maps.LatLng(40.444837, -73.987043),
-			new google.maps.LatLng(40.433079, -73.986013),
-			new google.maps.LatLng(40.504382, -73.689382),
-		    new google.maps.LatLng(40.595687, -73.712042),
-			new google.maps.LatLng(40.598034, -73.732474)
-		];
-
-		atlocean = new google.maps.Polygon({
-			paths: atloceanCoords,
-			strokeColor: '#FF0000',
-			strokeOpacity: 0.8,
-			strokeWeight: 2,
-			fillColor: '#FF0000',
-			fillOpacity: 0.35,
-			// visibility: false
-		});
-
-		atlocean.setMap(map);
-
-
-		// East River to the Throgs Neck (includes Harlem and Bronx Rivers)
+		// East River to the Throgs Neck, Harlem, Hudson and Bronx Rivers)
 		var eastriver;
 		var eastriverCoords = [
-			new google.maps.LatLng(40.799094, -73.793363),
-		 	new google.maps.LatLng(40.793766, -73.793363),
-			new google.maps.LatLng(40.792922, -73.793363),
 			new google.maps.LatLng(40.791102, -73.792677),
 			new google.maps.LatLng(40.788893, -73.791303),
 			new google.maps.LatLng(40.787528, -73.789673),
@@ -237,9 +206,41 @@ $(function() {
 			new google.maps.LatLng(40.839193, -73.937321),
 			new google.maps.LatLng(40.856983, -73.926506),
 			new google.maps.LatLng(40.869965, -73.917580),
-			new google.maps.LatLng(40.871783, -73.924961),
-			new google.maps.LatLng(40.876066, -73.927536),
-			new google.maps.LatLng(40.883594, -73.921699),
+			new google.maps.LatLng(40.870809, -73.921465), //Inwood hill park south point
+			new google.maps.LatLng(40.864161, -73.924921),
+			new google.maps.LatLng(40.838971, -73.942087),
+			new google.maps.LatLng(40.827931, -73.947924),
+			new google.maps.LatLng(40.800518, -73.968523),
+			new google.maps.LatLng(40.770104, -73.990667),
+			new google.maps.LatLng(40.750600, -74.003971),
+			new google.maps.LatLng(40.737985, -74.005516),
+			new google.maps.LatLng(40.713658, -74.010151),
+			new google.maps.LatLng(40.701426, -74.012211), //southeast corner
+			new google.maps.LatLng(40.705981, -74.048260), //southwest corner
+		 	new google.maps.LatLng(40.710991, -74.057701),
+			new google.maps.LatLng(40.715935, -74.054096),
+			new google.maps.LatLng(40.718017, -74.039505),
+			new google.maps.LatLng(40.734279, -74.036587),
+			new google.maps.LatLng(40.739351, -74.031952),
+			new google.maps.LatLng(40.746374, -74.028004),
+			new google.maps.LatLng(40.752227, -74.028175),
+			new google.maps.LatLng(40.755868, -74.030922),
+			new google.maps.LatLng(40.760159, -74.028862),
+			new google.maps.LatLng(40.761069, -74.024914),
+			new google.maps.LatLng(40.771600, -74.017533),
+		 	new google.maps.LatLng(40.774460, -74.014271),
+			new google.maps.LatLng(40.780180, -74.011009),
+			new google.maps.LatLng(40.801494, -73.996761),
+			new google.maps.LatLng(40.814877, -73.986118),
+			new google.maps.LatLng(40.833453, -73.975647),
+			new google.maps.LatLng(40.840726, -73.974273),
+			new google.maps.LatLng(40.852153, -73.966034),
+			new google.maps.LatLng(40.862410, -73.962944),
+			new google.maps.LatLng(40.882919, -73.952472),
+			new google.maps.LatLng(40.920997, -73.936637), //northwest corner
+			new google.maps.LatLng(40.919441, -73.905008), //northeast corner
+		 	new google.maps.LatLng(40.896867, -73.908098), //join???
+			new google.maps.LatLng(40.881258, -73.915039), //Northmost point
 			new google.maps.LatLng(40.875677, -73.903503),
 			new google.maps.LatLng(40.866330, -73.904190),
 			new google.maps.LatLng(40.854256, -73.914318),
@@ -285,6 +286,128 @@ $(function() {
 		});
 
 		eastriver.setMap(map);
+
+
+		// Paerdegat Basin
+		var paerdegat;
+		var paerdegatCoords = [
+			new google.maps.LatLng(40.619898, -73.898672), //center of maguire
+		 	new google.maps.LatLng(40.618986, -73.896268),
+			new google.maps.LatLng(40.618725, -73.893693),
+			new google.maps.LatLng(40.620158, -73.891719),
+			new google.maps.LatLng(40.622895, -73.891891),
+			new google.maps.LatLng(40.624784, -73.894294), //endof mouth on right
+			new google.maps.LatLng(40.634490, -73.916610),
+			new google.maps.LatLng(40.633252, -73.919700),
+			new google.maps.LatLng(40.629995, -73.920644),
+			new google.maps.LatLng(40.622504, -73.905194),
+			new google.maps.LatLng(40.619963, -73.901933),
+			new google.maps.LatLng(40.619898, -73.898672)
+		];
+
+		paerdegat = new google.maps.Polygon({
+			paths: paerdegatCoords,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#FF0000',
+			fillOpacity: 0.35,
+			// visibility: false
+		});
+
+		paerdegat.setMap(map);
+
+
+		// Jamaica Bay, Atlantic Ocean/Long Island South Shore, Lower NY Bay, Raritan Bay East of Wolf's Pond Park
+		var jamaica;
+		var jamaicaCoords = [
+			new google.maps.LatLng(40.595687, -73.712042),
+			new google.maps.LatLng(40.433079, -73.986013),
+			new google.maps.LatLng(40.444837, -73.987043), 
+			new google.maps.LatLng(40.472788, -74.013136), //southern lower bay entrance
+			new google.maps.LatLng(40.451093, -74.135766),
+		 	new google.maps.LatLng(40.437114, -74.156537),
+			new google.maps.LatLng(40.449003, -74.178853),
+			new google.maps.LatLng(40.530076, -74.181600),
+			new google.maps.LatLng(40.542861, -74.156194),
+			new google.maps.LatLng(40.568425, -74.125638),
+			new google.maps.LatLng(40.598149, -74.072080),
+			new google.maps.LatLng(40.614570, -74.022126),
+			new google.maps.LatLng(40.592674, -73.977837),
+			new google.maps.LatLng(40.600234, -73.941102),
+			new google.maps.LatLng(40.614309, -73.941102),
+			new google.maps.LatLng(40.619898, -73.898672), //center of maguire
+		 	new google.maps.LatLng(40.618986, -73.896268),
+			new google.maps.LatLng(40.618725, -73.893693),
+			new google.maps.LatLng(40.620158, -73.891719),
+			new google.maps.LatLng(40.622895, -73.891891),
+			new google.maps.LatLng(40.624784, -73.894294),
+			new google.maps.LatLng(40.633252, -73.891547),
+			new google.maps.LatLng(40.638463, -73.889316),
+		 	new google.maps.LatLng(40.650707, -73.898586),
+			new google.maps.LatLng(40.667375, -73.859275),
+			new google.maps.LatLng(40.669979, -73.822196),
+			new google.maps.LatLng(40.669198, -73.766235),
+			new google.maps.LatLng(40.670239, -73.748382),
+			new google.maps.LatLng(40.666594, -73.727439),
+			new google.maps.LatLng(40.666529, -73.702119),
+			new google.maps.LatLng(40.658781, -73.690188),
+			new google.maps.LatLng(40.643478, -73.699029),
+			new google.maps.LatLng(40.630712, -73.722203),
+			new google.maps.LatLng(40.625696, -73.733447),
+			new google.maps.LatLng(40.615533, -73.734563)
+		];
+
+		jamaica = new google.maps.Polygon({
+			paths: jamaicaCoords,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#FF0000',
+			fillOpacity: 0.35,
+			// visibility: false
+		});
+
+		jamaica.setMap(map);
+
+
+		// Long Island Sound
+		var lisound;
+		var lisoundCoords = [
+			new google.maps.LatLng(40.816008, -73.810119), //throgs neck top
+			new google.maps.LatLng(40.810811, -73.804969),
+			new google.maps.LatLng(40.809122, -73.800678),
+			new google.maps.LatLng(40.805744, -73.793296),
+			new google.maps.LatLng(40.799094, -73.793363), //middle of throgs
+			new google.maps.LatLng(40.791102, -73.792677),
+			new google.maps.LatLng(40.788893, -73.791303),
+			new google.maps.LatLng(40.787528, -73.789673),
+			new google.maps.LatLng(40.782459, -73.785209),
+			new google.maps.LatLng(40.761659, -73.759460),
+		 	new google.maps.LatLng(40.755678, -73.750190),
+			new google.maps.LatLng(40.755678, -73.750190),
+			new google.maps.LatLng(40.788958, -73.665046),
+			new google.maps.LatLng(40.844821, -73.690109),
+			new google.maps.LatLng(40.862220, -73.723411),
+			new google.maps.LatLng(40.914908, -73.822288),
+			new google.maps.LatLng(40.893889, -73.839111),
+			new google.maps.LatLng(40.855988, -73.841514),
+			new google.maps.LatLng(40.823023, -73.818874)
+		];
+
+		lisound = new google.maps.Polygon({
+			paths: lisoundCoords,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#FF0000',
+			fillOpacity: 0.35,
+			// visibility: false
+		});
+
+		lisound.setMap(map);
+
+
 
 
 
