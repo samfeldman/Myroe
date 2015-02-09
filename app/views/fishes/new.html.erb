@@ -4,7 +4,7 @@
 		<%= form_for @fish, url: fishes_path, method: :post do |f| %>
 		<li> 
 			type: <%= f.select :fish_type, 
-				[['fish1','fish1'],['fish2','fish2'],['fish3','fish3']]%>
+				[['Alewife','Alewife'],['American butterfish','American butterfish'],['American eel','American eel'],['American lobster','American lobster'],['American shad','American shad'],['Atlantic herring','Atlantic herrig'],['Atlantic horseshoe crab','Atlantic horseshoe crab'],['Atlantic menhaden','Atlantic menhaden'],['Atlantic needlefish','Atlantic needlefish'],['Atlantic rock crab','Atlantic rock crab'],['Atlantic silverside','Atlantic silverside'],['Atlantic sturgeon','Atlantic sturgeon'],['Black drum','Black drum'],['Blue crab','Blue crab'],['Bluefish','Bluefish'],['Carp','Carp'],['Channel catfish','Channel catfish'],['Ghost crab','Ghost crab'],['Gizzard shad','Gizzard shad'],['Goldfish','Goldfish'],['Lady crab','Lady crab'],['Lined seahorse','Lined seahorse'],['Longfin inshore squid','Longfin inshore squid'],['Mummichog','Mummichog'],['Northern pipefish','Northern pipefish'],['Portly spider crab','Portly spider crab'],['Rainbow smelt','Rainbow smelt'],['Scup','Scup'],['Striped bass','Striped bass'],['Summer flounder','Summer flounder'],['Sand lance','Sand lance'],['Tautog','Tautog'],['Tomcod','Tomcod'],['Weakfish','Weakfish'],['White catfish','White catfish'],['White perch','White perch'],['Winter flounder','Winter flounder'],['Other'],['Other']]%>
 		</li>
 		<li>
 			number: <%= f.select :number, [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9],[10,10],[11,11],[12,12],[13,13]]%>
@@ -26,6 +26,8 @@
 	</ul>
 	<%= flash[:alert] if flash[:alert] %>
 	<%= flash[:notice] if flash[:notice] %>
+	<div class="fish_warning">
+	</div>
 </div>
 
 
