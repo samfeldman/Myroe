@@ -798,7 +798,9 @@ $( document ).ready(function() {
 					$('.fish_warning').text('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: Eat up to 1 MEAL/MONTH.');
 				//american eel
 				} else if (($('#fish_fish_type :selected').text == "American eel") {
-					$('.fish_warning').text('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: Eat up to 1 MEAL/MONTH. <h1>WARNING: ENDANGERED CONSERVATION STATUS!</h1><p>Always release after catching.</p>');
+					$('.fish_warning').text(
+						'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: Eat up to 1 MEAL/MONTH.' + 
+						'<h1>WARNING: ENDANGERED CONSERVATION STATUS!</h1><p>Always release after catching.</p>');
 				//horseshoe crab
 				} else if (($('#fish_fish_type :selected').text == "American horseshoe crab") {
 					$('.fish_warning').text('<h1>WARNING: NEAR THREATENED CONSERVATION STATUS!</h1><p>Horseshoe crabs aid in medical research and are not good to eat. Always release after catching.</p>');
@@ -808,16 +810,6 @@ $( document ).ready(function() {
 				} else if (($('#fish_fish_type :selected').text == "Tautog") {
 					$('.fish_warning').text('<h1>WARNING: VULNERABLE CONSERVATION STATUS!</h1><p>Always release after catching.</p>');
 				}
-
-				//if specific fish cases
-					//specific warning
-				//else for rest of fish
-					//if specific special fish
-						//specific special fish info
-					//else for rest of fish
-						//all fish warning
-
-
 
 			//east river
 			} else if (isWithin_eastriver == true) {
@@ -831,7 +823,7 @@ $( document ).ready(function() {
 						'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY(HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>');
 				//Atlantic needlefish, Bluefish, Carp, Goldfish, Rainbow smelt, Striped bass, White perch
 				} else if (($('#fish_fish_type :selected').text == "Atlantic needlefish" or "Bluefish" or "Carp" or "Goldfish" or "Rainbow smelt" or "Striped bass" or "White perch") {
-					$('.fish_warning').text('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 1 meal/month. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
+					$('.fish_warning').text('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 1 meal/month. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
 				//american eel
 				} else if (($('#fish_fish_type :selected').text == "American eel") {
 					$('.fish_warning').text(
@@ -855,7 +847,7 @@ $( document ).ready(function() {
 
 
 			//arthurkill
-			} else if (isWithin_lisound == true) {
+			} else if (isWithin_arthurkill == true) {
 				//Blue crab
 				if (($('#fish_fish_type :selected').text == "Blue crab") {
 					$('.fish_warning').text(
@@ -863,15 +855,65 @@ $( document ).ready(function() {
 					'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY(HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>');
 				//Atlantic needlefish, Bluefish, Rainbow smelt
 				} else if (($('#fish_fish_type :selected').text == "Atlantic needlefish" or "Bluefish" or "Rainbow smelt") {
-					$('.fish_warning').text('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 1 meal/month. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
+					$('.fish_warning').text('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 1 MEAL/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
 				//Gizzard shad, Striped bass, White perch
-				} else if (($('#fish_fish_type :selected').text == "American eel" or "Gizzard shad" or "Striped bass" or "White perch") {
+				} else if (($('#fish_fish_type :selected').text == "Gizzard shad" or "Striped bass" or "White perch") {
 					$('.fish_warning').text('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: DO NOT EAT. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
-				
+				//american eel
+				} else if (($('#fish_fish_type :selected').text == "American eel") {
+					$('.fish_warning').text(
+						'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: DO NOT EAT. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.' + 
+						'<h1>WARNING: ENDANGERED CONSERVATION STATUS!</h1><p>Always release after catching.</p>');
+				//horseshoe crab
+				} else if (($('#fish_fish_type :selected').text == "American horseshoe crab") {
+					$('.fish_warning').text('<h1>WARNING: NEAR THREATENED CONSERVATION STATUS!</h1><p>Horseshoe crabs aid in medical research and are not good to eat. Always release after catching.</p>');
+				//lined seahorse
+				} else if (($('#fish_fish_type :selected').text == "Lined seahorse") {
+					$('.fish_warning').text(
+						'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.' +
+						'<h1>WARNING: VULNERABLE CONSERVATION STATUS!</h1><p>Always release after catching.</p>');
+				} else if (($('#fish_fish_type :selected').text == "Tautog") {
+					$('.fish_warning').text(
+						'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.' +
+						'<h1>WARNING: VULNERABLE CONSERVATION STATUS!</h1><p>Always release after catching.</p>');
+				} else {
+					$('.fish_warning').text('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
+				}
 
 			//upper, raritan
 			} else if (isWithin_upper == true) or (isWithin_raritan == true) {
-				$('.fish_warning').text('Upper Warning');
+				
+				//Blue crab
+				if (($('#fish_fish_type :selected').text == "Blue crab") {
+					$('.fish_warning').text(
+					'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin and Cadmium</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH (6 CRABS/MEAl). WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.' +
+					'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY(HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>');
+				//Atlantic needlefish, Bluefish, Rainbow smelt, Striped bass
+				} else if (($('#fish_fish_type :selected').text == "Atlantic needlefish" or "Bluefish" or "Rainbow smelt" or "Striped bass") {
+					$('.fish_warning').text('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 1 MEAL/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
+				//Gizzard shad, White perch
+				} else if (($('#fish_fish_type :selected').text == "Gizzard shad" or "White perch") {
+					$('.fish_warning').text('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: DO NOT EAT. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
+				//american eel
+				} else if (($('#fish_fish_type :selected').text == "American eel") {
+					$('.fish_warning').text(
+						'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: DO NOT EAT. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.' + 
+						'<h1>WARNING: ENDANGERED CONSERVATION STATUS!</h1><p>Always release after catching.</p>');
+				//horseshoe crab
+				} else if (($('#fish_fish_type :selected').text == "American horseshoe crab") {
+					$('.fish_warning').text('<h1>WARNING: NEAR THREATENED CONSERVATION STATUS!</h1><p>Horseshoe crabs aid in medical research and are not good to eat. Always release after catching.</p>');
+				//lined seahorse
+				} else if (($('#fish_fish_type :selected').text == "Lined seahorse") {
+					$('.fish_warning').text(
+						'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.' +
+						'<h1>WARNING: VULNERABLE CONSERVATION STATUS!</h1><p>Always release after catching.</p>');
+				} else if (($('#fish_fish_type :selected').text == "Tautog") {
+					$('.fish_warning').text(
+						'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.' +
+						'<h1>WARNING: VULNERABLE CONSERVATION STATUS!</h1><p>Always release after catching.</p>');
+				} else {
+					$('.fish_warning').text('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
+				}
 
 			} 
 		}
