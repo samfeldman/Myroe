@@ -359,7 +359,7 @@ form {
 
 /*SMALL WIDTH*/
 
-@media all and (max-width: 550px) {
+@media all and (max-width: 550px), all and (max-device-width: 550px){
 
 	html {
 		overflow: hidden;
@@ -503,7 +503,7 @@ form {
 
 
 /*MOBILE FRIENDLY*/
-
+/*
 @media all and (max-device-width: 550px) {
 
 	html {
@@ -607,7 +607,6 @@ form {
 	.tab_up {
 		display: block;
 		position: relative;
-		top: 20px;
 		z-index: 999;
 		height: 30px;
 		width: 60px;
@@ -646,7 +645,7 @@ form {
 	}
 
 }
-
+*/
 
 
 
