@@ -417,7 +417,7 @@ form {
 	}
 
 	form {
-		height: 223px;
+		height: 268px;
 		overflow: scroll;
 		margin: 20px 0;
 		padding: 10px 30px;
@@ -434,20 +434,21 @@ form {
 		padding: 15px;
 		margin: 20px auto;
 		margin-top: -15px;
-		height: 295px;
+		height: 340px;
 		width: 220px;
 	} 
 
 	.info_page {
+		position: relative;
 		padding: 15px;
 		margin: 20px auto;
 		margin-top: -15px;
-		height: 295px;
+		height: 340px;
 		width: 220px;
 	}
 
 	.catches {
-		height: 145px;
+		height: 190px;
 	}
 
 	.bucket_location {
@@ -460,10 +461,7 @@ form {
 
 	.tab_up {
 		display: block;
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 405px;
+		position: relative;
 		z-index: 999;
 		height: 30px;
 		width: 60px;
@@ -472,9 +470,13 @@ form {
 		border: 2px;
 		border-color: #FA8A25;
 		border-style: solid;
+		top: 450px;
 	}
 
-	.tab_up > img {
+	.tab_up > img{
+		position: relative;
+		top: -750px;
+		left: 0px;
 		margin: 0 15px;
 	}
 
@@ -560,7 +562,7 @@ form {
 	}
 
 	form {
-		height: 223px;
+		height: 268px;
 		overflow: scroll;
 		margin: 20px 0;
 		padding: 10px 30px;
@@ -577,20 +579,21 @@ form {
 		padding: 15px;
 		margin: 20px auto;
 		margin-top: -15px;
-		height: 295px;
+		height: 340px;
 		width: 220px;
 	} 
 
 	.info_page {
+		position: relative;
 		padding: 15px;
 		margin: 20px auto;
 		margin-top: -15px;
-		height: 295px;
+		height: 340px;
 		width: 220px;
 	}
 
 	.catches {
-		height: 145px;
+		height: 190px;
 	}
 
 	.bucket_location {
@@ -603,10 +606,8 @@ form {
 
 	.tab_up {
 		display: block;
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 405px;
+		position: relative;
+		top: 20px;
 		z-index: 999;
 		height: 30px;
 		width: 60px;
@@ -615,9 +616,13 @@ form {
 		border: 2px;
 		border-color: #FA8A25;
 		border-style: solid;
+		top: 450px;
 	}
 
-	.tab_up > img {
+	.tab_up > img{
+		position: relative;
+		top: -750px;
+		left: 0px;
 		margin: 0 15px;
 	}
 
