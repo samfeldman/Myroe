@@ -1,63 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0" />
-	<meta name="google-translate-customization" content="f8d63d1e2ec7e8cd-1fd1f70793827def-gbd60cd7cedacbede-13"></meta>
-	<title>Myroe</title>
-	<link href='https://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-	<%= stylesheet_link_tag    'application', media: 'all'%>
-	<%= javascript_include_tag 'application' %>
-	<%= csrf_meta_tags %>
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	<head>
+		<meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0" />
+		<meta name="google-translate-customization" content="f8d63d1e2ec7e8cd-1fd1f70793827def-gbd60cd7cedacbede-13"></meta>
+		<title>Myroe</title>
+		<link href='https://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
+		<link rel="icon" type="image/x-icon" href="/favicon.ico">
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		<%= stylesheet_link_tag    'application', media: 'all'%>
+		<%= javascript_include_tag 'application' %>
+		<%= csrf_meta_tags %>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		ga('create', 'UA-59667057-1', 'auto');
-		ga('send', 'pageview');
-	</script>
-</head>
-<body>
-	<main class="clearfix">
-		<% if @current_user == nil %>
-			<div class="map_cover">
-			</div>
-		<% end %>
-		<div id="mapdiv">
-		</div>
-		<section class="over_map clearfix">
-			<% if @current_user != nil %>
-				<nav class="top_nav clearfix">
-					<ul class="nav_ul clearfix">
-						<li class="icon"><a href="/users/<%= @current_user.id %>"><img src="/bucket.png" alt="bucket symbol"></a></li>
-						<li class="icon"><a href="/users/<%= @current_user.id %>/edit"><img src="/settings.png" alt="gear symbol"></a></li>
-						<li class="icon"><a href="/fishadvisory"><img src="/fishicon.png" alt="fish symbol"></a></li>
-						<li class="icon"><a href="/csoo"><img src="/biohazardicon.png" alt="biohazard symbol"></a></li>
-						<li class="icon"><a href="/sessions/destroy"><img src="/logout.png" alt="power button symbol"></a></li>
-					</ul>
-				</nav>
+			ga('create', 'UA-59667057-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</head>
+	<body>
+		<main class="clearfix">
+			<% if @current_user == nil %>
+				<div class="map_cover">
+				</div>
 			<% end %>
-			<%= yield %>
-			<div id="google_translate_element"></div>
-			<script type="text/javascript">
-				function googleTranslateElementInit() {
-				  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.VERTICAL, gaTrack: true, gaId: 'UA-59667057-1'}, 'google_translate_element');
-				}
-			</script>
-			<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-			</script>
-		</section>
-		<%if @current_user != nil %>
-			<div class="tab_up">
-				<img src="/carrotup.png" alt="triangle icon">
+			<div id="mapdiv">
 			</div>
-			<div class="tab_down">
-				<img src="/carrot.png" alt="triangle icon">
-			</div>
-		<% end %>
-		<div data-env="<%=Rails.env%>" class="env"></div>
-	</main>
-</body>
+			<section class="over_map clearfix">
+				<% if @current_user != nil %>
+					<nav class="top_nav clearfix">
+						<ul class="nav_ul clearfix">
+							<li class="icon"><a href="/users/<%= @current_user.id %>"><img src="/bucket.png" alt="bucket symbol"></a></li>
+							<li class="icon"><a href="/users/<%= @current_user.id %>/edit"><img src="/settings.png" alt="gear symbol"></a></li>
+							<li class="icon"><a href="/fishadvisory"><img src="/fishicon.png" alt="fish symbol"></a></li>
+							<li class="icon"><a href="/csoo"><img src="/biohazardicon.png" alt="biohazard symbol"></a></li>
+							<li class="icon"><a href="/sessions/destroy"><img src="/logout.png" alt="power button symbol"></a></li>
+						</ul>
+					</nav>
+				<% end %>
+				<%= yield %>
+				<div id="google_translate_element"></div>
+				<script type="text/javascript">
+					function googleTranslateElementInit() {
+					  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.VERTICAL, gaTrack: true, gaId: 'UA-59667057-1'}, 'google_translate_element');
+					}
+				</script>
+				<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+				</script>
+			</section>
+			<%if @current_user != nil %>
+				<div class="tab_up">
+					<img src="/carrotup.png" alt="triangle icon">
+				</div>
+				<div class="tab_down">
+					<img src="/carrot.png" alt="triangle icon">
+				</div>
+			<% end %>
+			<div data-env="<%=Rails.env%>" class="env"></div>
+		</main>
+	</body>
 </html>

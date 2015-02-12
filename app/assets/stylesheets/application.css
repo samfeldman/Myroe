@@ -445,6 +445,7 @@ form {
 		margin: 68px auto;
 		height: 355px;
 		width: 225px;
+		overflow: scroll;
 	}
 
 	.content {
@@ -577,7 +578,7 @@ form {
 	}
 
 	input[type='submit'] {
-	margin: 10px auto;
+		margin: 10px auto;
 	}
 
 	form {
@@ -592,6 +593,7 @@ form {
 		margin: 68px auto;
 		height: 355px;
 		width: 225px;
+		overflow: scroll;
 	}
 
 	.content {

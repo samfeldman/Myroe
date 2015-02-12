@@ -94,7 +94,6 @@ $( document ).ready(function() {
 					url: "/fishes",
 				})
 				.done(function( fishes, current_user ) {
-				// 	debugger;
 					fish = fishes["fishes"];
 					var current_user_id = fishes["current_user"].id;
 					for(var i = 0; i < fish.length; i++){
