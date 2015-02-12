@@ -87,6 +87,17 @@ h3 {
 	margin: 20px 0;
 }
 
+.goog-te-combo {
+	border: 2px;
+	border-color: #FA8A25;
+	border-style: solid;
+	background-color: white;
+}
+
+.goog-te-combo > option {
+	background-color: white;
+}
+
 
 /*NAV*/
 
@@ -269,6 +280,7 @@ form {
 }
 
 
+
 /*BUCKET INTERIOR*/
 
 .fish h2 {
@@ -321,6 +333,8 @@ form {
 	height: 60%;
 	margin-top: 100px;
 }
+
+
 
 /*INTERMEDIATE WIDTH*/
 
@@ -646,7 +660,7 @@ form {
 	.tab_down > img {
 		margin: 0 15px;
 	}
-
+	
 	#google_translate_element {
 		margin: 50px 0;
 	}
