@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0" />
+	<meta name="google-translate-customization" content="f8d63d1e2ec7e8cd-1fd1f70793827def-gbd60cd7cedacbede-13"></meta>
 	<title>Myroe</title>
 	<link href='https://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -49,6 +50,14 @@
 			</div>
 		<% end %>
 		<div data-env="<%=Rails.env%>" class="env"></div>
+		<div id="google_translate_element"></div>
+		<script type="text/javascript">
+			function googleTranslateElementInit() {
+			  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-59667057-1'}, 'google_translate_element');
+			}
+		</script>
+		<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+		</script>
 	</main>
 </body>
 </html>
