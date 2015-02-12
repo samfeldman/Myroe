@@ -83,6 +83,9 @@ h3 {
 	display: none;
 }
 
+#google_translate_element {
+	margin: 20px 0;
+}
 
 
 /*NAV*/
@@ -497,6 +500,10 @@ form {
 		margin: 0 15px;
 	}
 
+	#google_translate_element {
+		margin: 50px 0;
+	}
+
 }
 
 
@@ -638,6 +645,10 @@ form {
 
 	.tab_down > img {
 		margin: 0 15px;
+	}
+
+	#google_translate_element {
+		margin: 50px 0;
 	}
 
 }
