@@ -354,8 +354,8 @@ form {
 }
 
 .catch_some {
-	height: 60%;
-	margin-top: 100px;
+	height: 100%;
+	padding: 40px 10px;
 }
 
 
