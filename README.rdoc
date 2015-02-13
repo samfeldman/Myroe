@@ -8,12 +8,14 @@
    * The MyRoe web app was created over a two week period at the end of the NYC+DA Web Intensive, as a final project, and continues to be updated frequently 
    * MyRoe was inpired by a percieved lack of health safety information amoung subsistence fishers in the NYC area
    * MyRoe is intended to be foremost a mobile web app used in the field
-   * Future project additions will include warnings specific to a fish's location and type and integration of the google translate API
+   * Future project additions will include Facebook and Twitter API integration so fish can be shared via social media
 
 3. Gems, API, Data sources
    * Ruby 2.1.3, Rails 4.1.7, jbuilder ~>2.0
    * Google Maps API
-   * NYC Open Data modified by [I Quant NY](http://iquantny.tumblr.com/post/97788820249/fecal-map-nyc-the-worst-places-to-swim-in-the) 
+   * Combined Sewer Overflow outfall information from NYC Open Data, modified by [I Quant NY](http://iquantny.tumblr.com/post/97788820249/fecal-map-nyc-the-worst-places-to-swim-in-the) 
+   * Fish warning information from [NY State Department of Health New York City Region Fish Advisories](http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/regional/new_york_city.htm)
+
 
 4. Database Creation and Deployment
-   * In order to populate the google map with Combined Sewer Overflow outfalls, once MyRoe had been deployed and a database set up, a CSV file called harbor_sampling_coordinates was parsed using the self.parse_data method in the outfall.rb file and saved to the Outfall model, so that each outfall could be called from the database and displayed using JSON in the outfalls controller. This data was then grabbed using an AJAX call in jquery and looped through to be displayed in the google map. The Fish model is similarly displayed, but is not static.
+   * In order to populate the google map with Combined Sewer Overflow outfalls, once MyRoe had been deployed and a database set up, a CSV file called harbor_sampling_coordinates was parsed using the self.parse_data method in the outfall.rb file and saved to the Outfall model, so that each outfall could be called from the database and displayed using JSON in the outfalls controller. This data was then grabbed using an AJAX call in jQuery and looped through to be displayed in the google map. The Fish model is similarly displayed, but is not static.
