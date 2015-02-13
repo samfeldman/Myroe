@@ -7,10 +7,11 @@
 			<li>password: <%= f.password_field :password %></li>
 			<li>confirm: <%= f.password_field :password_confirmation %></li>
 			<li><%= f.submit "Sign Up" %></li>
+			<%= flash[:alert] if flash[:alert] %>
+			<%= flash[:notice] if flash[:notice] %>
+			<h3>need to log in?</h3>
+			<%= link_to(("log in!"), "/sessions/new")%>
 		<% end %>
-		<h3>need to log in?</h3>
-		<%= link_to(("log in!"), "/sessions/new")%>
+		
 	</ul>
-	<%= flash[:alert] if flash[:alert] %>
-	<%= flash[:notice] if flash[:notice] %>
 </div>

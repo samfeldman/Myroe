@@ -1,4 +1,4 @@
-<div class="content extra_long">
+<div class="content">
 	<h2>New Fish</h2>
 	<ul>
 		<%= form_for @fish, url: fishes_path, method: :post do |f| %>
@@ -23,10 +23,13 @@
 			</li>
 		<li><%= f.submit "create fish" %></li>
 		<% end %> 
+		<%= flash[:alert] if flash[:alert] %>
+		<%= flash[:notice] if flash[:notice] %>
 	</ul>
-	<%= flash[:alert] if flash[:alert] %>
-	<%= flash[:notice] if flash[:notice] %>
-	<div class="fish_warning">
+	<div class="warning_wrapper">
+		<div class="close_warning"><b>X</b></div>
+		<div class="fish_warning">
+		</div>
 	</div>
 </div>
 

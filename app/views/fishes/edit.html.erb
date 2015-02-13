@@ -1,4 +1,4 @@
-<div class="content extra_long">
+<div class="content">
 	<h2>Edit Fish</h2>
 	<ul>
 		<%= form_for @fish, url: fish_path, method: :patch do |f| %>
@@ -19,9 +19,9 @@
 		</li>
 		<li><%= f.submit "update fish" %></li>
 		<% end %>
+		<%= flash[:alert] if flash[:alert] %>
+		<%= flash[:notice] if flash[:notice] %>
 	</ul>
-	<%= flash[:alert] if flash[:alert] %>
-	<%= flash[:notice] if flash[:notice] %>
 	<div class="fish_warning">
 	</div>
 </div>

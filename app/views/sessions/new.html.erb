@@ -5,13 +5,12 @@
 			<%= fields_for :user do |ff| %>
 				<li>email: <%= ff.email_field(:email) %></li>
 				<li>password: <%= ff.password_field(:password) %></li>
-				<li>confirm: <%= ff.password_field(:password_confirmation) %></li>
 				<li><%= ff.submit("log in!") %></li>
 			<% end %>
+			<%= flash[:alert] if flash[:alert] %>
+			<%= flash[:notice] if flash[:notice] %>
+			<h3>not signed up yet?</h3>
+			<%= link_to(("sign up!"), "/users/new")%>
 		<% end %>
 	</ul>
-	<%= flash[:alert] if flash[:alert] %>
-	<%= flash[:notice] if flash[:notice] %>
-	<h3>not signed up yet?</h3>
-	<%= link_to(("sign up!"), "/users/new")%>
 </div>

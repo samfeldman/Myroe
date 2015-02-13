@@ -19,6 +19,9 @@
 
 $( document ).ready(function() {
 
+
+	// tab slides up/down
+
 	$('.tab_up').click(function(){
 		if ($('.content').length) {
 			$('.content').slideUp();
@@ -26,9 +29,12 @@ $( document ).ready(function() {
 		if ($('.info_page').length) {
 			$('.info_page').slideUp();
 		};
-			$('.over_map').height('66px');
-			$('.tab_up').hide();
-			$('.tab_down').show();
+		if ($('.warning_wrapper').length) {
+			$('.warning_wrapper').slideUp();
+		};
+		$('.over_map').height('66px');
+		$('.tab_up').hide();
+		$('.tab_down').show();
 	});
 
 	$('.tab_down').click(function(){
@@ -38,11 +44,13 @@ $( document ).ready(function() {
 		if ($('.info_page').length) {
 			$('.info_page').slideDown();
 		};
-			$('.over_map').height('400px');
-			$('.tab_down').hide();
-			$('.tab_up').show();
+		if ($('.warning_wrapper').length) {
+			$('.warning_wrapper').slideDown();
+		};
+		$('.over_map').height('400px');
+		$('.tab_down').hide();
+		$('.tab_up').show();
 	});
-
 
 
 	// screen resize-dependant div resets
@@ -823,7 +831,7 @@ $( document ).ready(function() {
 					$('#fish_fish_type :selected').val() == "Lady crab" || 
 					$('#fish_fish_type :selected').val() == "Blue crab" || 
 					$('#fish_fish_type :selected').val() == "Portly spider crab") {
-						$('.fish_warning').html('<h1>WARNING</h1><p>DO NOT EAT TOMALLEY(HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>');
+						$('.fish_warning').html('<h1>WARNING</h1><p>DO NOT EAT TOMALLEY (HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>');
 				} else {
 					$('.fish_warning').html('');
 				}
@@ -839,7 +847,7 @@ $( document ).ready(function() {
 				} else if ($('#fish_fish_type :selected').val() == "Blue crab") {
 					$('.fish_warning').html(
 						'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Cadmium</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH (6 CRABS/MEAl). WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.' +
-						'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY(HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>');
+						'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY (HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>');
 				//Atlantic needlefish, Bluefish, Carp, Goldfish, Rainbow smelt, Striped bass, White perch
 				} else if ($('#fish_fish_type :selected').val() == "Atlantic needlefish" ||
 					$('#fish_fish_type :selected').val() ==  "Bluefish" ||
@@ -874,7 +882,7 @@ $( document ).ready(function() {
 					$('#fish_fish_type :selected').val() == "Lady crab" || 
 					$('#fish_fish_type :selected').val() == "Portly spider crab") {
 						$('.fish_warning').html(
-							'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY(HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>' +
+							'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY (HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>' +
 							'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
 				} else {
 					$('.fish_warning').html('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
@@ -887,7 +895,7 @@ $( document ).ready(function() {
 				if ($('#fish_fish_type :selected').val() == "Blue crab") {
 					$('.fish_warning').html(
 					'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin and Cadmium</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH (6 CRABS/MEAl). WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.' +
-					'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY(HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>');
+					'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY (HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>');
 				//Atlantic needlefish, Bluefish, Rainbow smelt
 				} else if ($('#fish_fish_type :selected').val() == "Atlantic needlefish" ||
 					$('#fish_fish_type :selected').val() == "Bluefish" ||
@@ -922,7 +930,7 @@ $( document ).ready(function() {
 					$('#fish_fish_type :selected').val() == "Lady crab" || 
 					$('#fish_fish_type :selected').val() == "Portly spider crab") {
 						$('.fish_warning').html(
-							'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY(HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>' +
+							'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY (HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>' +
 							'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
 				} else {
 					$('.fish_warning').html('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
@@ -935,7 +943,7 @@ $( document ).ready(function() {
 				if ($('#fish_fish_type :selected').val() == "Blue crab") {
 					$('.fish_warning').html(
 					'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin and Cadmium</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH (6 CRABS/MEAl). WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.' +
-					'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY(HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>');
+					'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY (HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>');
 				//Atlantic needlefish, Bluefish, Rainbow smelt, Striped bass
 				} else if ($('#fish_fish_type :selected').val() == "Atlantic needlefish" ||
 					$('#fish_fish_type :selected').val() == "Bluefish" ||
@@ -970,7 +978,7 @@ $( document ).ready(function() {
 					$('#fish_fish_type :selected').val() == "Lady crab" || 
 					$('#fish_fish_type :selected').val() == "Portly spider crab") {
 						$('.fish_warning').html(
-							'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY(HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>' +
+							'<h1>WARNING</h1><p>DO NOT EAT TOMALLEY (HEPATOPANCREAS OR MUSTARD) OR COOKING LIQUID. It may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs, Dioxin or Cadmium</a></p>' +
 							'<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
 				} else {
 					$('.fish_warning').html('<h1>WARNING: may contain <a href="http://www.health.ny.gov/environmental/outdoors/fish/health_advisories/additional_information.htm#chemicals">PCBs and Dioxin</a></h1><p>WOMEN OVER 50/MEN OVER 15: Eat up to 4 MEALS/MONTH. WOMEN UNDER 50/CHILDREN UNDER 15: DO NOT EAT.');
@@ -978,6 +986,34 @@ $( document ).ready(function() {
 			}
 		});	
 
+
+		// warning_wrapper show/hide
+
+		if ($('.fish_warning').text().trim() != "") {
+			console.log("text is not blank");
+			console.log($('.fish_warning').text());
+			$('.warning_wrapper').show();
+		} else {
+				console.log($('.fish_warning').text());
+				console.log("text is blank")
+		};
+
+		$('#fish_fish_type').change(function(){
+			console.log("inside change");
+			if ($('.fish_warning').text().trim() != "") {
+				console.log($('.fish_warning').text());
+				console.log("text is not blank");
+				$('.warning_wrapper').show();
+			} else {
+				console.log($('.fish_warning').text());
+				console.log("text is blank")
+			};
+		});
+
+		$('.close_warning').click(function(){
+			console.log("close works");
+			$('.warning_wrapper').hide();
+		});
 
 	};
 });
