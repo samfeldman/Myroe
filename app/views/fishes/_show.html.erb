@@ -9,5 +9,10 @@
 		<li class="fish_info"><a href="/fishes/<%="#{ fish.id }"%>/edit">edit fish</a></li>
 		<li class="fish_info">
 				<%= link_to ("delete fish"), "/fishes/#{ fish.id }", method: :delete %></li>
+		<li><div class="fb-share-button" data-href="http://myroe.herokuapp.com/users/<%="#{fish.user_id}"%>?fish_id=<%="#{fish.id}"%>" data-layout="button"></div></li>
+		<li>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-text="I just caught this fish using MyRoe!" data-count="none">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</li>
 	<% end %>
 </ul>
