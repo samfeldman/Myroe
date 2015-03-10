@@ -44,7 +44,7 @@ class FishesController < ApplicationController
     current_user
     @fish = Fish.new(fish_params)
     if @fish.save!
-      redirect_to "/users/#{@current_user.id}"   
+      redirect_to "/users/#{@current_user.id}?fish_id=#{@fish.id}"   
     else 
       flash[:alert] = @fish.errors.full_messages
       redirect_to :back
