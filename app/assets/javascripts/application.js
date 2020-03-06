@@ -145,7 +145,7 @@ $( document ).ready(function() {
 						}
 
 						// event listener for fishmarker click
-							google.maps.event.addEventListener(fishMarker, 'click', function() {
+							google.maps.event.addListener(fishMarker, 'click', function() {
 							window.location.href = "http://"+ host +"/users/" + this.user_id + "?fish_id=" + this.fish_id
 						});
 
@@ -205,7 +205,7 @@ $( document ).ready(function() {
 		  					pixelOffset: 0
 							});
 
-						google.maps.event.addEventListener(outfallMarker, 'click', function() {
+						google.maps.event.addListener(outfallMarker, 'click', function() {
 							boxText = document.createElement("html");
 							boxText.innerHTML = 
 							"<head><link href='http://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'><link href='/assets/application.css?body=1' media='all' rel='stylesheet'></head><body><h4 class='info_window'>Location: </h4><h3 class='info_window'>" + this.description + "</h3>" +
@@ -230,7 +230,7 @@ $( document ).ready(function() {
 		}
 
 		// event listener for new fish click
-		google.maps.event.addEventListener(map, 'click', function(event) {
+		google.maps.event.addListener(map, 'click', function(event) {
 			placeMarker(event.latLng);
 			window.location.href = "http://"+ host +"/fishes/new?lat="+ event.latLng.k+"&lng="+ event.latLng.D;
 		});
