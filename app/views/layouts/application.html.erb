@@ -6,7 +6,7 @@
 		<title>Myroe</title>
 		<link href='https://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
 		<%= favicon_link_tag 'favicon.ico' %>
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCHRI3dtC7i74UGmq4WYxjp_1Q8RRAiIkY"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%=ENV['GOOGLE_KEY']%>"></script>
 		<%= stylesheet_link_tag    'application', media: 'all'%>
 		<%= javascript_include_tag 'application' %>
 		<%= csrf_meta_tags %>
